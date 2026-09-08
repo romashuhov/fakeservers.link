@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"strict": true,
+		"verbatimModuleSyntax": true,
+		"isolatedModules": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"allowJs": true,
+		"checkJs": false,
+		"types": ["vite/client", "svelte"]
+	},
+	"include": ["src/**/*.ts", "src/**/*.svelte", "vite.config.ts"]
+}

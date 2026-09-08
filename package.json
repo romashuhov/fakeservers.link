@@ -1,0 +1,29 @@
+{
+	"name": "fakeservers",
+	"private": true,
+	"workspaces": [
+		"apps/*"
+	],
+	"scripts": {
+		"dev": "concurrently -n api,web -c blue,green \"bun run scripts/with-env-run.ts bun --cwd apps/api dev\" \"bun run --cwd apps/web dev\"",
+		"build": "bun run --cwd apps/web build",
+		"start": "bun run --cwd apps/api start",
+		"migrate": "bun run scripts/with-env-run.ts bun apps/api/src/cli.ts migrate",
+		"collect": "bun run scripts/with-env-run.ts bun apps/api/src/cli.ts collect",
+		"check": "biome check . && bun run --cwd apps/web check",
+		"format": "biome format --write .",
+		"prod": "bash ./prod.sh",
+		"prod:restart": "bash ./restart.sh",
+		"prod:update": "bash ./update.sh",
+		"prod:logs": "bash ./logs.sh",
+		"prod:ps": "bash ./ps.sh",
+		"prod:down": "bash ./stop.sh",
+		"export": "bun run scripts/with-env-run.ts bun apps/api/src/cli.ts export"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.0",
+		"bun-types": "^1.3.0",
+		"concurrently": "^9.2.0",
+		"typescript": "^5.9.0"
+	}
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fakeservers.link — fake & mirror servers in the Steam browser</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="How much of the Steam server browser for Counter-Strike is fake or mirror listings. Counted every hour from the Steam Web API." />
+    <!-- Link previews. The server rewrites these with the live figure before sending the page. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="fakeservers.link" />
+    <meta property="og:url" content="https://fakeservers.link/" />
+    <meta property="og:title" content="fakeservers.link — fake servers in the Steam browser, counted" />
+    <meta property="og:description" content="Live count of fake and mirror servers in the Counter-Strike server browser, updated hourly from the Steam Web API." />
+    <meta property="og:image" content="https://fakeservers.link/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="fakeservers.link — fake servers in the Steam browser, counted" />
+    <meta name="twitter:description" content="Live count of fake and mirror servers in the Counter-Strike server browser, updated hourly from the Steam Web API." />
+    <meta name="twitter:image" content="https://fakeservers.link/og.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Loaded without blocking the first paint: the page renders in the fallback fonts and swaps. -->
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" /></noscript>
+    <script>
+      try {
+        var t = localStorage.getItem("fakeservers-theme");
+        if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

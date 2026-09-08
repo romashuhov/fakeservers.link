@@ -1,0 +1,11 @@
+node_modules
+**/node_modules
+**/dist
+.git
+.env
+dumps
+data
+*.md
+*.sh
+*.ps1
+*.cmd

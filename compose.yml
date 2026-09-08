@@ -1,0 +1,63 @@
+# Prod contour: everything in Docker, one external port (PROD_PORT, see ../PORTS.md project 02).
+name: fakeservers
+
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: fakeservers-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-fakeservers}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+      POSTGRES_DB: ${POSTGRES_DB:-fakeservers}
+    volumes:
+      - fakeservers-pg:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+
+  migrator:
+    build: .
+    image: fakeservers-app
+    container_name: fakeservers-migrator
+    command: ["bun", "apps/api/src/cli.ts", "migrate", "up"]
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-fakeservers}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-fakeservers}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  app:
+    build: .
+    image: fakeservers-app
+    container_name: fakeservers-app
+    env_file: .env
+    environment:
+      FAKESERVERS_ENV: prod
+      PORT: 4102
+      DATABASE_URL: postgres://${POSTGRES_USER:-fakeservers}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-fakeservers}
+      TRUST_PROXY: ${TRUST_PROXY:-1}
+      DATA_EXPORT: 1
+      DATA_DIR: /app/data
+    volumes:
+      # Daily aggregates; with DATA_PUSH_TOKEN set they are also pushed to the repository.
+      - fakeservers-data:/app/data
+    ports:
+      - "${PROD_PORT:-4102}:4102"
+    depends_on:
+      migrator:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://127.0.0.1:4102/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  fakeservers-pg:
+  fakeservers-data:

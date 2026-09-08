@@ -1,0 +1,17 @@
+{
+	"name": "@fakeservers/api",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "bun --watch src/index.ts",
+		"start": "bun src/index.ts"
+	},
+	"dependencies": {
+		"@resvg/resvg-wasm": "^2.6.2",
+		"elysia": "^1.4.0",
+		"zod": "^4.1.0"
+	},
+	"devDependencies": {
+		"bun-types": "^1.3.0"
+	}
+}

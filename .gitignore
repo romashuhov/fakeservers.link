@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.dev.pid
+*.log
+dumps/
+.svelte-kit/
