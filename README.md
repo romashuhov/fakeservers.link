@@ -133,6 +133,7 @@ Ports come from `../PORTS.md`, project 02: prod 4102, dev API 4202, web 4302, Po
 | `COLLECT_INTERVAL_MIN`, `COLLECT_ON_START` | | collector schedule |
 | `REPORT_RATE_PER_HOUR` | | reports per client per hour |
 | `DATA_EXPORT`, `DATA_DIR` | | daily export; prod compose turns it on |
+| `ADMIN_TOKEN` | | unlocks `GET /api/views`; empty means the route 404s |
 
 ## API
 
@@ -145,6 +146,7 @@ Ports come from `../PORTS.md`, project 02: prod 4102, dev API 4202, web 4302, Po
 | `GET /api/farms/:id?offset=&limit=&soffset=&slimit=` | one cluster: addresses and subnets |
 | `POST /api/report` `{ addr, note? }` | report a wrong verdict, rate-limited |
 | `GET /og.png` | preview image with the live number |
+| `GET /api/views?token=&days=` | page counters, 404 without `ADMIN_TOKEN` |
 
 ## Data in git
 
@@ -154,6 +156,15 @@ hourly series, totals, and the 100 largest clusters. Format in [`data/README.md`
 The app pushes the file itself through the GitHub API when `DATA_PUSH_TOKEN` is set. No git, ssh or
 cron on the server; a failed push retries next hour. Full address lists stay out of the repository at
 ~4 MB per hourly snapshot; [/farms](https://fakeservers.link/farms) is the place for them.
+
+## Counting visitors
+
+Page views are counted in the app, in Postgres, with no third party and no cookies. A hit bumps a
+counter row; a visitor is `sha256(secret + day + IP + user agent)`, which is meaningless the next day
+and unusable without the secret. Nothing personal is stored, so the site needs no consent banner.
+
+Obvious bots are skipped by user agent. Read the numbers with `bun run views 30` on the server, or
+`GET /api/views?token=$ADMIN_TOKEN&days=30`.
 
 ## Languages
 

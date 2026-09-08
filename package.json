@@ -10,6 +10,7 @@
 		"start": "bun run --cwd apps/api start",
 		"migrate": "bun run scripts/with-env-run.ts bun apps/api/src/cli.ts migrate",
 		"collect": "bun run scripts/with-env-run.ts bun apps/api/src/cli.ts collect",
+		"views": "bun run scripts/with-env-run.ts bun apps/api/src/cli.ts views",
 		"check": "biome check . && bun run --cwd apps/web check",
 		"format": "biome format --write .",
 		"prod": "bash ./prod.sh",

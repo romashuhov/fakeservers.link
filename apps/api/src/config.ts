@@ -17,6 +17,8 @@ const schema = z.object({
 	DATA_REPO: z.string().default("romashuhov/fakeservers.link"),
 	DATA_BRANCH: z.string().default("main"),
 	DATA_PUSH_TOKEN: z.string().default(""),
+	/** Token for GET /api/views. Empty means the endpoint does not exist. */
+	ADMIN_TOKEN: z.string().default(""),
 	/** Public origin of the site, used for absolute Open Graph URLs (image, canonical). */
 	PUBLIC_URL: z.string().default("https://fakeservers.link"),
 });

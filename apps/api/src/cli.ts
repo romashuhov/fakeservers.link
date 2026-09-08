@@ -4,6 +4,7 @@ import { loadConfig } from "./config";
 import { closeDb } from "./db";
 import { dataDir, exportCompletedDays, exportDay } from "./export";
 import { migrateRepairChecksums, migrateStatus, migrateUp, migrateVerify } from "./migrate";
+import { printViews, viewsReport } from "./views";
 
 const [cmd, sub] = process.argv.slice(2);
 
@@ -48,9 +49,14 @@ async function main(): Promise<number> {
 			console.log(written.length > 0 ? `wrote ${written.join(", ")}` : "nothing new to export");
 			return 0;
 		}
+		case "views": {
+			const days = Math.min(366, Math.max(1, Number.parseInt(sub ?? "30", 10) || 30));
+			printViews(await viewsReport(days));
+			return 0;
+		}
 		default:
 			console.error(
-				"usage: cli.ts migrate [up|status|verify|repair-checksums] | collect | export [YYYY-MM-DD]",
+				"usage: cli.ts migrate [up|status|verify|repair-checksums] | collect | export [YYYY-MM-DD] | views [days]",
 			);
 			return 2;
 	}

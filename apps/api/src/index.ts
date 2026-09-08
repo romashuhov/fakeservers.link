@@ -10,6 +10,7 @@ import { farmDetail, farmsQuery, listFarms } from "./farms";
 import { headline, ogImage } from "./og";
 import { checkAddress, getStats, refreshStats } from "./stats";
 import { splitAddr } from "./steam";
+import { recordView, viewsReport } from "./views";
 
 const config = loadConfig();
 const collector = scheduleCollector(config, () => {
@@ -119,6 +120,15 @@ const app = new Elysia()
 		set.headers["cache-control"] = "public, max-age=60";
 		return detail;
 	})
+	.get("/api/views", async ({ query, set }) => {
+		if (!config.ADMIN_TOKEN || String(query.token ?? "") !== config.ADMIN_TOKEN) {
+			set.status = 404;
+			return { error: "not found" };
+		}
+		const days = Math.min(366, Math.max(1, Number.parseInt(String(query.days ?? "30"), 10) || 30));
+		set.headers["cache-control"] = "no-store";
+		return viewsReport(days);
+	})
 	.post("/api/report", async ({ body, request, server, set }) => {
 		const parsed = reportBody.safeParse(body);
 		if (!parsed.success || !splitAddr(parsed.data.addr)) {
@@ -161,16 +171,19 @@ async function shellFor(path: string): Promise<string> {
 }
 
 if (serveStatic) {
-	app.get("/*", async ({ params, set, path }) => {
+	app.get("/*", async ({ params, set, path, request, server }) => {
 		const rel = (params["*"] ?? "").replace(/\.\./g, "");
 		const file = Bun.file(resolve(staticDir, rel));
 		if (rel && (await file.exists())) {
 			if (rel.startsWith("assets/")) set.headers["cache-control"] = "public, max-age=31536000, immutable";
 			return file;
 		}
+		const page = path === "/farms" ? "/farms" : "/";
+		recordView(config, request, page, clientIp(request, server?.requestIP(request)?.address));
 		set.headers["content-type"] = "text/html; charset=utf-8";
-		set.headers["cache-control"] = "public, max-age=60";
-		return shellFor(path === "/farms" ? "/farms" : "/");
+		// no-store: the shell carries the live figure and every hit is a page view worth counting.
+		set.headers["cache-control"] = "no-store";
+		return shellFor(page);
 	});
 }
 
