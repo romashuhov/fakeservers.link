@@ -8,14 +8,12 @@ CS 1.6 and Condition Zero are copies of each other, sitting on a handful of subn
 
 > <https://fakeservers.link> · A browser without the fakes: <https://csbro.net>
 
-## The redirect is the business
+## An appeal to Valve: fix the redirects
 
-A fake listing costs nothing. Answer the query, show a full server on a good map, wait. When someone
-connects, redirect them to the address the operator actually wants filled.
+The whole mirror architecture grew around one flaw: a server can redirect a joining player to an
+unrelated IP. Without it mirrors make no sense at all, and the community can grow again.
 
-Take the redirect away and a mirror leads nowhere. It stops paying for its tokens and IPs, and the
-listings disappear on their own. Valve does not need to moderate 100,000 servers. It needs to remove
-one feature.
+Remove the redirects and 90% of the problem is solved.
 
 ## What counts
 

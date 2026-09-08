@@ -123,10 +123,10 @@ const es: Dict = {
 
 	"how.title": "Cómo contamos",
 	"how.lead1":
-		"{n} reglas, simples recuentos sobre la lista pública. La cifra grande usa solo la más estricta, Ejército de clones. Las otras cuatro son contexto. Los {official} servidores de Valve quedan fuera.",
+		"Solo una regla, Ejército de clones, marca una entrada como falsa. Las otras cuatro solo añaden contexto. Los {official} servidores de Valve quedan fuera.",
 	"how.lead2a": "Otros fueron más lejos.",
 	"how.lead2b":
-		"además vigila listas de jugadores y patrones de actividad en el tiempo, y atrapa mucho más. Nosotros nos quedamos con una lista pública. ¿Falta una regla? Abre un issue.",
+		"construye analítica sobre datos históricos para detectar patrones de jugadores falsos. Nosotros nos quedamos con una lista pública. ¿Quieres mejorar la lógica? Abre un issue en GitHub.",
 
 	"footer.updated": "Actualizado el {date} · próxima pasada en {t}",
 	"footer.methodology": "Metodología",
@@ -171,12 +171,11 @@ const es: Dict = {
 	"farms.loadMore": "Cargar {n} granjas más",
 	"farms.nothing": "Nada coincide. Afloja algún filtro.",
 
-	"fix.title": "Arreglad la redirección, no la lista",
+	"fix.title": "Un llamamiento a Valve: arreglad las redirecciones",
 	"fix.p1":
-		"Una entrada falsa no cuesta nada. Responder a la consulta, mostrar un servidor lleno en un buen mapa, esperar. Cuando alguien conecta, lo redirigen a la dirección que el operador quiere llenar.",
-	"fix.p2":
-		"Todo el negocio está en esa redirección. Sin ella un espejo no lleva a ninguna parte y deja de pagar sus tokens e IP. Valve no tiene que moderar 100.000 servidores. Tiene que quitar una función.",
-	"fix.tagline": "Quita la redirección y las granjas caen con ella.",
+		"Toda la arquitectura de los espejos creció alrededor de un fallo: un servidor puede redirigir al jugador a una IP ajena",
+	"fix.p2": "Sin él los espejos no tienen ningún sentido, y la comunidad puede volver a crecer",
+	"fix.tagline": "Quitad las redirecciones y el 90% del problema queda resuelto",
 
 	"time.never": "nunca",
 	"time.justNow": "ahora mismo",

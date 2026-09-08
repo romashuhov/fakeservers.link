@@ -129,10 +129,10 @@ const pl: Dict = {
 
 	"how.title": "Jak liczymy",
 	"how.lead1":
-		"{n} reguł, proste zliczenia na publicznej liście. Główna liczba używa tylko najsurowszej, Armii klonów. Pozostałe cztery to kontekst. {official} serwerów Valve jest poza.",
+		"Tylko jedna reguła, Armia klonów, oznacza wpis jako fałszywy. Pozostałe cztery dodają jedynie kontekst. {official} serwerów Valve jest wyłączonych.",
 	"how.lead2a": "Inni poszli dalej.",
 	"how.lead2b":
-		"śledzi dodatkowo listy graczy i wzorce online w czasie i łapie dużo więcej. My trzymamy się jednej publicznej listy. Brakuje reguły? Otwórz issue.",
+		"buduje analitykę na danych historycznych, żeby wykrywać wzorce fałszywego online. My trzymamy się jednej publicznej listy. Chcesz dopracować logikę? Otwórz issue na GitHubie.",
 
 	"footer.updated": "Zaktualizowano {date} · następne uruchomienie za {t}",
 	"footer.methodology": "Metodologia",
@@ -182,12 +182,10 @@ const pl: Dict = {
 	"farms.loadMore": "Wczytaj {n} więcej farm",
 	"farms.nothing": "Brak wyników. Poluzuj filtr.",
 
-	"fix.title": "Naprawcie przekierowanie, nie listę",
-	"fix.p1":
-		"Fałszywy wpis nic nie kosztuje. Odpowiedzieć na zapytanie, pokazać pełny serwer na dobrej mapie, czekać. Gdy ktoś się łączy, trafia przekierowaniem pod adres, który operator naprawdę chce zapełnić.",
-	"fix.p2":
-		"Cały biznes stoi na tym przekierowaniu. Bez niego lustro prowadzi donikąd i przestaje zarabiać na tokeny i IP. Valve nie musi moderować 100 000 serwerów. Musi usunąć jedną funkcję.",
-	"fix.tagline": "Usuń przekierowanie, a farmy padną razem z nim.",
+	"fix.title": "Apel do Valve — naprawcie przekierowania",
+	"fix.p1": "Cała architektura luster wyrosła wokół jednej luki: serwer może przekierować gracza na obcy IP",
+	"fix.p2": "Bez niej lustra tracą sens, a społeczność znów może się rozwijać",
+	"fix.tagline": "Usuńcie przekierowania, a 90% problemu zniknie",
 
 	"time.never": "nigdy",
 	"time.justNow": "przed chwilą",

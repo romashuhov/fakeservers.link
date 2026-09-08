@@ -123,10 +123,10 @@ const de: Dict = {
 
 	"how.title": "Wie wir zählen",
 	"how.lead1":
-		"{n} Regeln, alles einfache Zählungen über die öffentliche Liste. Die große Zahl nutzt nur die strengste, Klonarmee. Die anderen vier sind Kontext. Valves eigene {official} Server sind ausgenommen.",
+		"Nur eine Regel, Klonarmee, markiert einen Eintrag als Fake. Die anderen vier liefern nur Kontext. Valves eigene {official} Server sind ausgenommen.",
 	"how.lead2a": "Andere sind weiter gegangen.",
 	"how.lead2b":
-		"verfolgt zusätzlich Spielerlisten und Online-Muster über die Zeit und fängt weit mehr. Wir bleiben bei einer öffentlichen Liste. Fehlt eine Regel? Mach ein Issue auf.",
+		"baut Analysen auf historischen Daten, um Muster gefälschter Spielerzahlen zu erkennen. Wir bleiben bei einer öffentlichen Liste. Willst du die Logik verbessern? Mach ein Issue auf GitHub auf.",
 
 	"footer.updated": "Aktualisiert {date} · nächster Lauf in {t}",
 	"footer.methodology": "Methodik",
@@ -171,12 +171,11 @@ const de: Dict = {
 	"farms.loadMore": "{n} weitere Farmen laden",
 	"farms.nothing": "Nichts passt. Filter lockern.",
 
-	"fix.title": "Repariert die Weiterleitung, nicht die Liste",
+	"fix.title": "Ein Appell an Valve: repariert die Weiterleitungen",
 	"fix.p1":
-		"Ein Fake-Eintrag kostet nichts. Abfrage beantworten, vollen Server auf einer guten Map zeigen, warten. Verbindet sich jemand, wird er auf die Adresse umgeleitet, die der Betreiber wirklich füllen will.",
-	"fix.p2":
-		"Auf dieser Weiterleitung steht das ganze Geschäft. Ohne sie führt ein Spiegel nirgendwohin und trägt seine Token und IPs nicht mehr. Valve muss nicht 100.000 Server moderieren. Es muss eine Funktion entfernen.",
-	"fix.tagline": "Weiterleitung weg, Farmen weg.",
+		"Die ganze Spiegel-Architektur ist um eine Lücke gewachsen: ein Server darf einen beitretenden Spieler auf eine fremde IP umleiten",
+	"fix.p2": "Ohne sie ergeben Spiegel überhaupt keinen Sinn, und die Community kann wieder wachsen",
+	"fix.tagline": "Entfernt die Weiterleitungen, und 90% des Problems sind gelöst",
 
 	"time.never": "nie",
 	"time.justNow": "gerade eben",

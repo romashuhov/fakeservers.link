@@ -144,10 +144,10 @@ const en: Dict = {
 	// how we count
 	"how.title": "How we count",
 	"how.lead1":
-		"{n} rules, all plain counts over the public list. The big number uses only the strictest one, Clone army. The other four are context. Valve's own {official} servers are excluded.",
+		"Only one rule, Clone army, flags a listing as fake. The other four only add context. Valve's own {official} servers are excluded.",
 	"how.lead2a": "Others went further.",
 	"how.lead2b":
-		"watches player lists and online patterns over time and catches far more. We stick to one public list. Missing a rule? Open an issue.",
+		"builds analytics on historical data to spot fake online patterns. We stick to one public list. Want to improve the logic? Open an issue on GitHub.",
 
 	// footer
 	"footer.updated": "Updated {date} · next run in {t}",
@@ -195,12 +195,11 @@ const en: Dict = {
 	"farms.nothing": "Nothing matches. Loosen a filter.",
 
 	// relative time
-	"fix.title": "Fix the redirect, not the list",
+	"fix.title": "An appeal to Valve: fix the redirects",
 	"fix.p1":
-		"A fake listing costs nothing. Answer the query, show a full server on a good map, wait. When someone connects, redirect them to the address the operator actually wants filled.",
-	"fix.p2":
-		"That redirect is the whole business. Without it a mirror leads nowhere and stops paying for its tokens and IPs. Valve does not have to moderate 100,000 servers. It has to remove one feature.",
-	"fix.tagline": "Kill the redirect and the farms die with it.",
+		"The whole mirror architecture grew around one flaw: a server can redirect a joining player to an unrelated IP",
+	"fix.p2": "Without it mirrors make no sense at all, and the community can grow again",
+	"fix.tagline": "Remove the redirects and 90% of the problem is solved",
 
 	"time.never": "never",
 	"time.justNow": "just now",

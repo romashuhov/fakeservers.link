@@ -124,10 +124,10 @@ const pt: Dict = {
 
 	"how.title": "Como contamos",
 	"how.lead1":
-		"{n} regras, contagens simples sobre a lista pública. O número grande usa só a mais rígida, Exército de clones. As outras quatro são contexto. Os {official} servidores da Valve ficam de fora.",
+		"Só uma regra, Exército de clones, marca uma entrada como falsa. As outras quatro apenas dão contexto. Os {official} servidores da Valve ficam de fora.",
 	"how.lead2a": "Outros foram mais longe.",
 	"how.lead2b":
-		"também acompanha listas de jogadores e padrões de atividade ao longo do tempo, e pega bem mais. Nós ficamos com uma lista pública. Falta uma regra? Abra uma issue.",
+		"constrói análises sobre dados históricos para detectar padrões de jogadores falsos. Nós ficamos com uma lista pública. Quer melhorar a lógica? Abra uma issue no GitHub.",
 
 	"footer.updated": "Atualizado em {date} · próxima passagem em {t}",
 	"footer.methodology": "Metodologia",
@@ -172,12 +172,11 @@ const pt: Dict = {
 	"farms.loadMore": "Carregar mais {n} fazendas",
 	"farms.nothing": "Nada corresponde. Afrouxe um filtro.",
 
-	"fix.title": "Consertem o redirecionamento, não a lista",
+	"fix.title": "Um apelo à Valve: consertem os redirecionamentos",
 	"fix.p1":
-		"Uma entrada falsa não custa nada. Responder à consulta, mostrar um servidor cheio num bom mapa, esperar. Quando alguém conecta, é redirecionado para o endereço que o operador quer encher.",
-	"fix.p2":
-		"O negócio inteiro está nesse redirecionamento. Sem ele um espelho não leva a lugar nenhum e deixa de pagar seus tokens e IPs. A Valve não precisa moderar 100 mil servidores. Precisa remover um recurso.",
-	"fix.tagline": "Tire o redirecionamento e as fazendas caem junto.",
+		"Toda a arquitetura dos espelhos cresceu em volta de uma falha: um servidor pode redirecionar o jogador para um IP alheio",
+	"fix.p2": "Sem ela os espelhos deixam de fazer sentido, e a comunidade volta a crescer",
+	"fix.tagline": "Removam os redirecionamentos e 90% do problema está resolvido",
 
 	"time.never": "nunca",
 	"time.justNow": "agora mesmo",

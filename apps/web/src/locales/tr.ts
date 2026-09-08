@@ -123,10 +123,10 @@ const tr: Dict = {
 
 	"how.title": "Nasıl sayıyoruz",
 	"how.lead1":
-		"{n} kural, hepsi herkese açık liste üzerinde basit sayımlar. Büyük rakam yalnızca en katısını, Klon ordusunu kullanır. Diğer dördü bağlam. Valve'ın {official} sunucusu dışarıda.",
+		"Bir kaydı sahte olarak yalnızca tek bir kural, Klon ordusu, işaretler. Diğer dördü sadece bağlam ekler. Valve'ın kendi {official} sunucusu dışarıda.",
 	"how.lead2a": "Başkaları daha ileri gitti.",
 	"how.lead2b":
-		"ayrıca oyuncu listelerini ve zaman içindeki çevrimiçi örüntüleri izler, çok daha fazlasını yakalar. Biz tek bir herkese açık listeye bağlı kalıyoruz. Eksik kural mı var? Issue aç.",
+		"sahte çevrimiçi örüntülerini yakalamak için geçmiş veriler üzerine analitik kuruyor. Biz tek bir herkese açık listeye bağlı kalıyoruz. Mantığı geliştirmek ister misiniz? GitHub'da issue açın.",
 
 	"footer.updated": "Güncellendi {date} · sonraki çalışma {t} sonra",
 	"footer.methodology": "Yöntem",
@@ -172,12 +172,11 @@ const tr: Dict = {
 	"farms.loadMore": "{n} çiftlik daha yükle",
 	"farms.nothing": "Eşleşen yok. Bir filtreyi gevşet.",
 
-	"fix.title": "Listeyi değil, yönlendirmeyi düzeltin",
+	"fix.title": "Valve'a çağrı: yönlendirmeleri düzeltin",
 	"fix.p1":
-		"Sahte kayıt hiçbir şeye mal olmaz. Sorguya cevap ver, iyi bir haritada dolu sunucu göster, bekle. Biri bağlandığında operatörün gerçekten doldurmak istediği adrese yönlendirilir.",
-	"fix.p2":
-		"Bütün iş bu yönlendirmede. Onsuz ayna hiçbir yere çıkmaz ve jetonlarının, IP'lerinin parasını çıkarmaz. Valve'ın 100.000 sunucuyu denetlemesi gerekmiyor. Bir özelliği kaldırması gerekiyor.",
-	"fix.tagline": "Yönlendirmeyi kaldır, çiftlikler onunla gider.",
+		"Ayna mimarisinin tamamı tek bir açığın etrafında büyüdü: sunucu, katılan oyuncuyu alakasız bir IP'ye yönlendirebiliyor",
+	"fix.p2": "O olmadan aynaların hiçbir anlamı kalmaz ve topluluk yeniden büyüyebilir",
+	"fix.tagline": "Yönlendirmeleri kaldırın, sorunun %90'ı çözülsün",
 
 	"time.never": "hiç",
 	"time.justNow": "az önce",

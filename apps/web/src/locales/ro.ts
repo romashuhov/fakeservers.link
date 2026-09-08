@@ -127,10 +127,10 @@ const ro: Dict = {
 
 	"how.title": "Cum numărăm",
 	"how.lead1":
-		"{n} reguli, simple numărători pe lista publică. Cifra mare folosește doar cea mai strictă, Armata de clone. Celelalte patru sunt context. Cele {official} servere ale Valve sunt excluse.",
+		"O singură regulă, Armata de clone, marchează o intrare drept falsă. Celelalte patru doar adaugă context. Cele {official} servere ale Valve sunt excluse.",
 	"how.lead2a": "Alții au mers mai departe.",
 	"how.lead2b":
-		"urmărește și listele de jucători și tiparele de activitate în timp și prinde mult mai mult. Noi rămânem la o singură listă publică. Lipsește o regulă? Deschide un issue.",
+		"construiește analize pe date istorice ca să depisteze tipare de jucători falși. Noi rămânem la o singură listă publică. Vrei să îmbunătățești logica? Deschide un issue pe GitHub.",
 
 	"footer.updated": "Actualizat {date} · următoarea rulare în {t}",
 	"footer.methodology": "Metodologie",
@@ -179,12 +179,11 @@ const ro: Dict = {
 	"farms.loadMore": "Încarcă încă {n} ferme",
 	"farms.nothing": "Nimic nu se potrivește. Relaxează un filtru.",
 
-	"fix.title": "Reparați redirecționarea, nu lista",
+	"fix.title": "Un apel către Valve: reparați redirecționările",
 	"fix.p1":
-		"O intrare falsă nu costă nimic. Răspunzi la interogare, arăți un server plin pe o hartă bună, aștepți. Când cineva se conectează, e trimis la adresa pe care operatorul chiar vrea s-o umple.",
-	"fix.p2":
-		"Toată afacerea stă în redirecționarea asta. Fără ea o oglindă nu duce nicăieri și nu-și mai scoate tokenurile și IP-urile. Valve nu trebuie să modereze 100.000 de servere. Trebuie să scoată o funcție.",
-	"fix.tagline": "Scoate redirecționarea și fermele cad cu ea.",
+		"Toată arhitectura oglinzilor a crescut în jurul unei breșe: un server poate redirecționa jucătorul către un IP străin",
+	"fix.p2": "Fără ea oglinzile nu mai au niciun sens, iar comunitatea poate crește din nou",
+	"fix.tagline": "Scoateți redirecționările și 90% din problemă e rezolvată",
 
 	"time.never": "niciodată",
 	"time.justNow": "chiar acum",

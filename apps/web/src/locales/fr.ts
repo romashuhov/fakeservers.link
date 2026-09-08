@@ -125,10 +125,10 @@ const fr: Dict = {
 
 	"how.title": "Comment on compte",
 	"how.lead1":
-		"{n} règles, de simples comptages sur la liste publique. Le grand chiffre n'utilise que la plus stricte, Armée de clones. Les quatre autres sont du contexte. Les {official} serveurs de Valve sont exclus.",
+		"Une seule règle, Armée de clones, marque une entrée comme fausse. Les quatre autres ne font qu'ajouter du contexte. Les {official} serveurs de Valve sont exclus.",
 	"how.lead2a": "D'autres sont allés plus loin.",
 	"how.lead2b":
-		"suit aussi les listes de joueurs et les tendances dans le temps, et en attrape bien plus. Nous nous en tenons à une seule liste publique. Une règle manque ? Ouvrez une issue.",
+		"construit des analyses sur des données historiques pour repérer les schémas de faux joueurs. Nous nous en tenons à une seule liste publique. Envie d'améliorer la logique ? Ouvrez une issue sur GitHub.",
 
 	"footer.updated": "Mis à jour le {date} · prochain passage dans {t}",
 	"footer.methodology": "Méthodologie",
@@ -173,12 +173,11 @@ const fr: Dict = {
 	"farms.loadMore": "Charger {n} fermes de plus",
 	"farms.nothing": "Rien ne correspond. Desserrez un filtre.",
 
-	"fix.title": "Réparez la redirection, pas la liste",
+	"fix.title": "Un appel à Valve : réparez les redirections",
 	"fix.p1":
-		"Une fausse entrée ne coûte rien. Répondre à la requête, afficher un serveur plein sur une bonne carte, attendre. Quand un joueur se connecte, il est redirigé vers l'adresse que l'opérateur veut vraiment remplir.",
-	"fix.p2":
-		"Tout le commerce tient à cette redirection. Sans elle, un miroir ne mène nulle part et ne rembourse plus ses jetons et ses IP. Valve n'a pas à modérer 100 000 serveurs. Il a une fonction à retirer.",
-	"fix.tagline": "Supprimez la redirection, les fermes tombent avec elle.",
+		"Toute l'architecture des miroirs a poussé autour d'une faille : un serveur peut rediriger un joueur vers une IP étrangère",
+	"fix.p2": "Sans elle, les miroirs n'ont plus aucun sens, et la communauté peut repartir",
+	"fix.tagline": "Supprimez les redirections et 90% du problème est réglé",
 
 	"time.never": "jamais",
 	"time.justNow": "à l'instant",

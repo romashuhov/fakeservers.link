@@ -127,10 +127,10 @@ const cs: Dict = {
 
 	"how.title": "Jak počítáme",
 	"how.lead1":
-		"{n} pravidel, prosté počty nad veřejným seznamem. Velké číslo používá jen to nejpřísnější, Armádu klonů. Zbylá čtyři jsou kontext. {official} serverů Valve je mimo.",
+		"Jako falešný záznam označuje jen jedno pravidlo, Armáda klonů. Zbylá čtyři jen dodávají kontext. {official} serverů Valve je mimo.",
 	"how.lead2a": "Jiní šli dál.",
 	"how.lead2b":
-		"navíc sleduje seznamy hráčů a vzorce online v čase a chytí mnohem víc. My zůstáváme u jednoho veřejného seznamu. Chybí pravidlo? Otevři issue.",
+		"staví analytiku nad historickými daty, aby odhalila vzorce falešného onlinu. My zůstáváme u jednoho veřejného seznamu. Chcete vylepšit logiku? Otevřete issue na GitHubu.",
 
 	"footer.updated": "Aktualizováno {date} · další běh za {t}",
 	"footer.methodology": "Metodika",
@@ -180,12 +180,11 @@ const cs: Dict = {
 	"farms.loadMore": "Načíst dalších {n} farem",
 	"farms.nothing": "Nic neodpovídá. Uvolni filtr.",
 
-	"fix.title": "Opravte přesměrování, ne seznam",
+	"fix.title": "Výzva pro Valve: opravte přesměrování",
 	"fix.p1":
-		"Falešný záznam nestojí nic. Odpovědět na dotaz, ukázat plný server na dobré mapě, čekat. Když se někdo připojí, přesměruje se na adresu, kterou chce provozovatel doopravdy naplnit.",
-	"fix.p2":
-		"Celý byznys stojí na tom přesměrování. Bez něj zrcadlo nikam nevede a přestane se vyplácet. Valve nemusí moderovat 100 000 serverů. Musí odebrat jednu funkci.",
-	"fix.tagline": "Zrušte přesměrování a farmy padnou s ním.",
+		"Celá architektura zrcadel vyrostla kolem jedné díry: server může připojujícího se hráče přesměrovat na cizí IP",
+	"fix.p2": "Bez ní zrcadla ztrácejí smysl a komunita může zase růst",
+	"fix.tagline": "Odstraňte přesměrování a 90 % problému je vyřešeno",
 
 	"time.never": "nikdy",
 	"time.justNow": "právě teď",
