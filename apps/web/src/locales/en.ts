@@ -34,11 +34,11 @@ const en: Dict = {
 	"headline.line": "of servers in the list are fake or mirrors",
 	"headline.fraction": "{fake} fake / {total} total",
 	"headline.floor":
-		"A floor, not an estimate. Only listings that are provably copies of each other count; everything that needs judgement is left out, and Valve's own {n} servers are out of both sides. The real share is higher.",
+		"This is the minimum. Only provable copies count, and Valve's own {n} servers are excluded from both sides. The real share is higher.",
 	"headline.live": "Live · {ago}",
-	"stat.farm100": "sit in farms of 100+ identical copies",
-	"stat.largest": "copies in the largest farm",
-	"stat.days": "days of counting, no end in sight",
+	"stat.farm100": "in farms of 100+ identical copies",
+	"stat.largest": { one: "copy in the largest farm", other: "copies in the largest farm" },
+	"stat.days": { one: "day of counting", other: "days of counting" },
 
 	// checker
 	"check.title": "Check a server",
@@ -52,22 +52,18 @@ const en: Dict = {
 	"check.hits": "{hits} of {total} rules hit; only the first one decides.",
 	"check.seeFarm": "See this farm and its {n} addresses →",
 	"verdict.duplicate": "Fake",
-	"verdict.duplicate.note":
-		"Clone army triggered: this address is one of many wearing the same name, map and max players.",
+	"verdict.duplicate.note": "This address shares its name, map and player limit with many others.",
 	"verdict.unique": "Looks real",
-	"verdict.unique.note":
-		"Clone army did not trigger. The other rules are context only. People might actually play here.",
+	"verdict.unique.note": "Clone army did not trigger. The other rules are context only.",
 	"verdict.gone": "Gone",
-	"verdict.gone.note": "Missing from the latest snapshot. Farms go quiet too; we keep the record.",
+	"verdict.gone.note": "Not in the latest snapshot. Farms go quiet too, so we keep the record.",
 	"verdict.not_listed": "Not in list",
-	"verdict.not_listed.note":
-		"We haven't seen this address in the Steam list. Either it's brand new, or it never existed. Both happen.",
+	"verdict.not_listed.note": "Never seen in the Steam list. Either brand new, or it never existed.",
 	"verdict.listed_recently": "Too new",
 	"verdict.listed_recently.note":
-		"Steam lists it right now, but it appeared after our last snapshot. Check back in an hour.",
+		"Steam lists it now, but it appeared after our last snapshot. Check back in an hour.",
 	"verdict.official": "Valve official",
-	"verdict.official.note":
-		"One of Valve's own servers. Listed by the master server, but not a community server: we keep it out of every count.",
+	"verdict.official.note": "One of Valve's own servers. Not a community server, so it counts nowhere.",
 	"field.name": "Name",
 	"field.map": "Map",
 	"field.players": "Players",
@@ -85,22 +81,19 @@ const en: Dict = {
 
 	// rules (labels and one-line details live here so they translate; ids come from the API)
 	"rule.identical": "Clone army",
-	"rule.identical.desc":
-		"Same name, same map, same max players on three or more addresses. One config, many ports.",
+	"rule.identical.desc": "Same name, map and player limit on three or more addresses.",
 	"rule.identical.detail": "{n} addresses share this name, map and max players",
 	"rule.farm": "Farm-sized",
-	"rule.farm.desc": "Part of a cluster of 100 or more identical listings. Very efficient hardware.",
+	"rule.farm.desc": "Part of a cluster of 100 or more identical listings.",
 	"rule.farm.detail": "cluster of {n} identical listings",
 	"rule.anonymous": "No token",
-	"rule.anonymous.desc":
-		"Logged in to Steam without a game server login token. Normal for GoldSrc-era games, a shortcut for farms elsewhere.",
+	"rule.anonymous.desc": "No game server token. Normal for GoldSrc games, a shortcut elsewhere.",
 	"rule.anonymous.detail": "no game server login token",
 	"rule.dense-ip": "IP stack",
-	"rule.dense-ip.desc": "Ten or more listings announcing from one IP address.",
+	"rule.dense-ip.desc": "Ten or more listings on one IP address.",
 	"rule.dense-ip.detail": "{n} listings on this IP",
 	"rule.dense-subnet": "Subnet stack",
-	"rule.dense-subnet.desc":
-		"Fifty or more listings announcing from the same /24. One operator, many addresses.",
+	"rule.dense-subnet.desc": "Fifty or more listings in one /24 subnet.",
 	"rule.dense-subnet.detail": "{n} listings in this /24",
 	"rules.decides": "decides",
 	"rules.listings": { one: "{n} listing", other: "{n} listings" },
@@ -110,8 +103,7 @@ const en: Dict = {
 	"chart.title": "Last 12 months",
 	"chart.all": "all servers",
 	"chart.fake": "fake",
-	"chart.note":
-		"One dot per day. Gaps are days the crawler was down; we don't draw lines through things we didn't see.",
+	"chart.note": "One dot per day. Gaps are days the crawler was down.",
 	"chart.servers": { one: "{n} server", other: "{n} servers" },
 	"chart.fakeN": "{n} fake",
 
@@ -140,7 +132,7 @@ const en: Dict = {
 
 	// top farms
 	"top.title": "Top farms",
-	"top.lead": "One operator, many addresses. Grouped by identical name, map and max players.",
+	"top.lead": "One operator, many addresses. Grouped by identical name, map and player limit.",
 	"top.all": "All farms, with filters and addresses →",
 	"top.empty": "No clusters of three or more identical listings right now.",
 	"top.cluster": "Cluster",
@@ -152,10 +144,10 @@ const en: Dict = {
 	// how we count
 	"how.title": "How we count",
 	"how.lead1":
-		"{n} rules, all plain counts over the list the browser itself shows. No probing, no guessing. The big number uses only the strictest one, Clone army: an indisputable violation that nobody can argue with. The other four are context and are shown as shares of the list. Valve's own servers, {official} of them right now, are listed by the master server too; they are neither counted nor blamed. That is why the number is a floor.",
+		"{n} rules, all plain counts over the public list. The big number uses only the strictest one, Clone army. The other four are context. Valve's own {official} servers are excluded.",
 	"how.lead2a": "Others went further.",
 	"how.lead2b":
-		"also watches player lists and online patterns over time, catches far more, and hides it all from its own browser. We stick to what can be verified from a single public list. Think a rule is missing or a threshold is wrong? Open an issue.",
+		"watches player lists and online patterns over time and catches far more. We stick to one public list. Missing a rule? Open an issue.",
 
 	// footer
 	"footer.updated": "Updated {date} · next run in {t}",
@@ -165,14 +157,13 @@ const en: Dict = {
 	"footer.csbro1": "Want a server browser that hides all of this? Try",
 	"footer.csbro2": ", a community browser with the fakes filtered out. Same author, same grudge.",
 	"footer.disclaimer":
-		"Data is collected automatically by a script that has never played Counter-Strike. Mistakes happen. If your server is on the wrong side of this page, use the report button in the checker above. Not affiliated with Valve.",
+		"A script that has never played Counter-Strike collects this. It makes mistakes. Wrong verdict? Use the report button above. Not affiliated with Valve.",
 	"footer.gabe": "Gabe, if you're reading this: no pressure.",
 	"top.button": "↑ top",
 
 	// farms page
 	"farms.title": "Farms",
-	"farms.lead":
-		"Every cluster of three or more identical listings in the latest run: same name, map and max players, many addresses. Open one to see who is behind it.",
+	"farms.lead": "Every cluster of three or more identical listings. Open one to see the addresses behind it.",
 	"farms.search": "search by name, IP, or subnet",
 	"farms.allGames": "all games",
 	"farms.allMaps": "all maps",
@@ -206,10 +197,10 @@ const en: Dict = {
 	// relative time
 	"fix.title": "Fix the redirect, not the list",
 	"fix.p1":
-		"Every farm here runs the same business. A fake listing costs nothing: answer the query, show a full server on a popular map, wait. When a player picks it and connects, the server redirects the client to a different address, the one the operator actually wants to fill. The listing is a billboard; the redirect is the door.",
+		"A fake listing costs nothing. Answer the query, show a full server on a good map, wait. When someone connects, redirect them to the address the operator actually wants filled.",
 	"fix.p2":
-		"That door is the whole economy. Take away a server's ability to send a joining client somewhere else, and a mirror becomes a dead end: the player lands nowhere, the operator gains nothing, and thousands of listings stop being worth the tokens and IPs they cost. Nobody has to police the list. It empties itself.",
-	"fix.tagline": "Close the redirect, and the market for mirrors collapses.",
+		"That redirect is the whole business. Without it a mirror leads nowhere and stops paying for its tokens and IPs. Valve does not have to moderate 100,000 servers. It has to remove one feature.",
+	"fix.tagline": "Kill the redirect and the farms die with it.",
 
 	"time.never": "never",
 	"time.justNow": "just now",

@@ -19,12 +19,11 @@ const zh: Dict = {
 	"headline.atLeast": "至少",
 	"headline.line": "的列表服务器是假的或镜像",
 	"headline.fraction": "{fake} 个假的 / 共 {total} 个",
-	"headline.floor":
-		"这是下限，不是估算。只统计可以证明彼此互为复制品的条目；一切需要主观判断的都不计入，Valve 自己的 {n} 台服务器也从分子和分母中同时剔除。真实比例更高。",
+	"headline.floor": "这是下限。只统计可证明的复制品，Valve 自己的 {n} 台服务器从两边都剔除。真实比例更高。",
 	"headline.live": "实时 · {ago}",
 	"stat.farm100": "个位于 100+ 相同副本的农场中",
-	"stat.largest": "个副本，最大农场",
-	"stat.days": "天持续统计，看不到尽头",
+	"stat.largest": { other: "个副本，最大农场" },
+	"stat.days": { other: "天持续统计" },
 
 	"check.title": "查一台服务器",
 	"check.lead": "粘贴浏览器里的地址。我们告诉你它在列表的哪一边。",
@@ -37,19 +36,17 @@ const zh: Dict = {
 	"check.hits": "{total} 条规则中命中 {hits} 条；只有第一条起决定作用。",
 	"check.seeFarm": "查看这个农场及其 {n} 个地址 →",
 	"verdict.duplicate": "假的",
-	"verdict.duplicate.note": "触发了“克隆大军”：这个地址是众多同名、同地图、同人数上限的地址之一。",
+	"verdict.duplicate.note": "这个地址的名称、地图和人数上限与许多其他地址相同。",
 	"verdict.unique": "看起来是真的",
-	"verdict.unique.note": "“克隆大军”未触发。其他规则只是参考。也许这里真的有人在玩。",
+	"verdict.unique.note": "克隆大军未触发。其他规则只是参考。",
 	"verdict.gone": "已消失",
-	"verdict.gone.note": "最新快照里没有它。农场也会沉寂；我们保留记录。",
+	"verdict.gone.note": "最新快照里没有它。农场也会沉寂，记录我们保留。",
 	"verdict.not_listed": "不在列表中",
-	"verdict.not_listed.note":
-		"我们从未在 Steam 列表中见过这个地址。要么是全新的，要么从未存在过。两种情况都有。",
+	"verdict.not_listed.note": "从未在 Steam 列表中见过。要么全新，要么从未存在。",
 	"verdict.listed_recently": "太新了",
-	"verdict.listed_recently.note": "Steam 现在列出了它，但它是在我们上一次快照之后出现的。一小时后再来看看。",
+	"verdict.listed_recently.note": "Steam 现在列出了它，但它出现在我们上次快照之后。一小时后再看。",
 	"verdict.official": "Valve 官方",
-	"verdict.official.note":
-		"Valve 自己的服务器。主服务器列出了它，但它不是社区服务器：我们把它排除在所有统计之外。",
+	"verdict.official.note": "Valve 自己的服务器。不是社区服务器，因此哪儿都不计入。",
 	"field.name": "名称",
 	"field.map": "地图",
 	"field.players": "玩家",
@@ -66,20 +63,19 @@ const zh: Dict = {
 	"report.failed": "发送失败，请稍后再试。",
 
 	"rule.identical": "克隆大军",
-	"rule.identical.desc": "三个或更多地址拥有相同的名称、地图和人数上限。一份配置，许多端口。",
+	"rule.identical.desc": "三个或更多地址的名称、地图和人数上限完全相同。",
 	"rule.identical.detail": "{n} 个地址共用这个名称、地图和人数上限",
 	"rule.farm": "农场规模",
-	"rule.farm.desc": "属于 100 个以上相同条目的集群。硬件效率真高。",
+	"rule.farm.desc": "属于 100 个以上相同条目的集群。",
 	"rule.farm.detail": "{n} 个相同条目的集群",
 	"rule.anonymous": "无令牌",
-	"rule.anonymous.desc":
-		"未使用游戏服务器登录令牌登录 Steam。GoldSrc 时代的游戏很正常，其他游戏则是农场的捷径。",
+	"rule.anonymous.desc": "没有服务器令牌。GoldSrc 时代正常，其他游戏是捷径。",
 	"rule.anonymous.detail": "没有游戏服务器登录令牌",
 	"rule.dense-ip": "IP 堆叠",
-	"rule.dense-ip.desc": "同一 IP 地址上有十个或更多条目。",
+	"rule.dense-ip.desc": "同一个 IP 上有十个或更多条目。",
 	"rule.dense-ip.detail": "此 IP 上有 {n} 个条目",
 	"rule.dense-subnet": "子网堆叠",
-	"rule.dense-subnet.desc": "同一 /24 子网中有五十个或更多条目。一个运营者，许多地址。",
+	"rule.dense-subnet.desc": "同一个 /24 里有五十个或更多条目。",
 	"rule.dense-subnet.detail": "此 /24 中有 {n} 个条目",
 	"rules.decides": "起决定作用",
 	"rules.listings": { other: "{n} 个条目" },
@@ -88,7 +84,7 @@ const zh: Dict = {
 	"chart.title": "最近 12 个月",
 	"chart.all": "全部服务器",
 	"chart.fake": "假的",
-	"chart.note": "每天一个点。空缺是采集器停机的日子；没看到的东西，我们不会用线连起来。",
+	"chart.note": "每天一个点。空缺是采集器停机的日子。",
 	"chart.servers": { other: "{n} 台服务器" },
 	"chart.fakeN": "{n} 个假的",
 
@@ -114,7 +110,7 @@ const zh: Dict = {
 	"games.partial.title": "API 停止翻页；实际总数更高",
 
 	"top.title": "最大的农场",
-	"top.lead": "一个运营者，许多地址。按相同的名称、地图和人数上限分组。",
+	"top.lead": "一个运营者，许多地址。按名称、地图和人数上限分组。",
 	"top.all": "全部农场，带筛选和地址 →",
 	"top.empty": "目前没有三个以上相同条目的集群。",
 	"top.cluster": "集群",
@@ -125,10 +121,9 @@ const zh: Dict = {
 
 	"how.title": "我们怎么统计",
 	"how.lead1":
-		"{n} 条规则，全都是对浏览器自身显示的列表做简单计数。不探测，不猜测。大数字只用最严格的一条“克隆大军”：无可争辩的违规，没人能反驳。其余四条是参考，以占列表的比例展示。Valve 自己的服务器（目前 {official} 台）也在主服务器上，既不计入也不指责。所以这个数字是下限。",
+		"{n} 条规则，都是对公开列表的简单计数。大数字只用最严格的一条，克隆大军。其余四条是参考。Valve 自己的 {official} 台服务器不计入。",
 	"how.lead2a": "有人走得更远。",
-	"how.lead2b":
-		"还会跟踪玩家列表和在线规律随时间的变化，抓到的多得多，并在自己的浏览器里全部隐藏。我们只做单一公开列表能验证的事。觉得缺一条规则或阈值不对？开个 issue。",
+	"how.lead2b": "还会跟踪玩家列表和长期在线规律，抓到的多得多。我们只用一份公开列表。缺规则？开个 issue。",
 
 	"footer.updated": "更新于 {date} · 下次运行 {t} 后",
 	"footer.methodology": "方法",
@@ -137,13 +132,12 @@ const zh: Dict = {
 	"footer.csbro1": "想要一个把这些全藏起来的服务器浏览器？试试",
 	"footer.csbro2": "，一个已过滤假服务器的社区浏览器。同一个作者，同一份怨气。",
 	"footer.disclaimer":
-		"数据由一个从未玩过 Counter-Strike 的脚本自动采集。难免出错。如果你的服务器被放错了位置，请用上方查询工具里的反馈按钮。与 Valve 无关。",
+		"数据由一个从没玩过 Counter-Strike 的脚本采集。它会出错。判断有误？用上方的反馈按钮。与 Valve 无关。",
 	"footer.gabe": "Gabe，如果你看到这里：别有压力。",
 	"top.button": "↑ 顶部",
 
 	"farms.title": "服务器农场",
-	"farms.lead":
-		"最新一次运行中每一个三个以上相同条目的集群：相同的名称、地图和人数上限，许多地址。展开看看背后是谁。",
+	"farms.lead": "每一个三个以上相同条目的集群。展开即可看到地址。",
 	"farms.search": "按名称、IP 或子网搜索",
 	"farms.allGames": "全部游戏",
 	"farms.allMaps": "全部地图",
@@ -176,10 +170,10 @@ const zh: Dict = {
 
 	"fix.title": "该修的是跳转，不是列表",
 	"fix.p1":
-		"这里的每个农场做的都是同一门生意。一条假记录不花什么成本：应答查询，在热门地图上显示一个满员服务器，然后等。玩家选中它并连接时，服务器把客户端跳转到另一个地址，也就是运营者真正想填满的那个。记录是广告牌，跳转才是门。",
+		"假记录不花什么成本。应答查询，在好地图上显示满员服务器，然后等。有人连接时，就把他跳转到运营者真正想填满的地址。",
 	"fix.p2":
-		"这扇门就是整个生意。拿掉服务器把正在加入的客户端送去别处的能力，镜像就成了死胡同：玩家哪儿也到不了，运营者一无所获，成千上万条记录不再值得它们消耗的令牌和 IP。没人需要去清理列表。它会自己空掉。",
-	"fix.tagline": "关掉跳转，镜像市场就会崩塌。",
+		"整门生意都在这个跳转上。没有它，镜像哪儿也去不了，也赚不回令牌和 IP。Valve 不必去管十万台服务器，只需去掉一个功能。",
+	"fix.tagline": "关掉跳转，农场就跟着倒。",
 
 	"time.never": "从未",
 	"time.justNow": "刚刚",

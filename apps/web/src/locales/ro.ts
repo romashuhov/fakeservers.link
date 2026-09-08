@@ -20,11 +20,15 @@ const ro: Dict = {
 	"headline.line": "din serverele din listă sunt false sau oglinzi",
 	"headline.fraction": "{fake} false / {total} în total",
 	"headline.floor":
-		"Un prag minim, nu o estimare. Contează doar intrările care sunt dovedit copii una a alteia; tot ce cere judecată e lăsat deoparte, iar cele {n} servere proprii ale Valve sunt scoase din ambele părți. Procentul real e mai mare.",
+		"Acesta e minimul. Numărăm doar copiile dovedite, iar cele {n} servere ale Valve sunt scoase din ambele părți. Procentul real e mai mare.",
 	"headline.live": "Live · {ago}",
-	"stat.farm100": "stau în ferme de 100+ copii identice",
-	"stat.largest": "copii în cea mai mare fermă",
-	"stat.days": "zile de numărat, fără sfârșit la orizont",
+	"stat.farm100": "în ferme de 100+ copii identice",
+	"stat.largest": {
+		one: "copie în cea mai mare fermă",
+		few: "copii în cea mai mare fermă",
+		other: "de copii în cea mai mare fermă",
+	},
+	"stat.days": { one: "zi de numărat", few: "zile de numărat", other: "de zile de numărat" },
 
 	"check.title": "Verifică un server",
 	"check.lead": "Lipește o adresă din browser. Îți spunem de care parte a listei e.",
@@ -37,22 +41,18 @@ const ro: Dict = {
 	"check.hits": "{hits} din {total} reguli declanșate; doar prima decide.",
 	"check.seeFarm": "Vezi această fermă și cele {n} adrese ale ei →",
 	"verdict.duplicate": "Fals",
-	"verdict.duplicate.note":
-		"„Armata de clone” s-a declanșat: adresa asta e una dintre multe cu același nume, hartă și limită de jucători.",
+	"verdict.duplicate.note": "Adresa asta împarte numele, harta și limita de jucători cu multe altele.",
 	"verdict.unique": "Pare real",
-	"verdict.unique.note":
-		"„Armata de clone” nu s-a declanșat. Celelalte reguli sunt doar context. Poate chiar se joacă aici.",
+	"verdict.unique.note": "Armata de clone nu s-a declanșat. Celelalte reguli sunt doar context.",
 	"verdict.gone": "Dispărut",
-	"verdict.gone.note": "Lipsește din ultima captură. Și fermele tac; păstrăm înregistrarea.",
+	"verdict.gone.note": "Lipsește din ultima captură. Și fermele tac, păstrăm înregistrarea.",
 	"verdict.not_listed": "Nu e în listă",
-	"verdict.not_listed.note":
-		"N-am văzut niciodată adresa asta în lista Steam. Ori e nou-nouță, ori n-a existat niciodată. Se întâmplă amândouă.",
+	"verdict.not_listed.note": "Nu am văzut-o în lista Steam. Ori e nouă, ori n-a existat.",
 	"verdict.listed_recently": "Prea nou",
 	"verdict.listed_recently.note":
-		"Steam îl listează chiar acum, dar a apărut după ultima noastră captură. Revino peste o oră.",
+		"Steam o listează acum, dar a apărut după ultima captură. Revino peste o oră.",
 	"verdict.official": "Oficial Valve",
-	"verdict.official.note":
-		"Unul dintre serverele proprii ale Valve. Listat de serverul master, dar nu e server de comunitate: îl ținem în afara oricărei numărători.",
+	"verdict.official.note": "Un server al Valve. Nu e de comunitate, deci nu se numără nicăieri.",
 	"field.name": "Nume",
 	"field.map": "Hartă",
 	"field.players": "Jucători",
@@ -69,21 +69,19 @@ const ro: Dict = {
 	"report.failed": "Nu s-a putut trimite. Încearcă mai târziu.",
 
 	"rule.identical": "Armata de clone",
-	"rule.identical.desc":
-		"Același nume, aceeași hartă, aceeași limită de jucători pe trei sau mai multe adrese. Un config, multe porturi.",
+	"rule.identical.desc": "Același nume, hartă și limită de jucători pe trei sau mai multe adrese.",
 	"rule.identical.detail": "{n} adrese au același nume, hartă și limită",
 	"rule.farm": "Cât o fermă",
-	"rule.farm.desc": "Parte dintr-un grup de 100 sau mai multe intrări identice. Hardware foarte eficient.",
+	"rule.farm.desc": "Parte dintr-un grup de 100 sau mai multe intrări identice.",
 	"rule.farm.detail": "grup de {n} intrări identice",
 	"rule.anonymous": "Fără token",
-	"rule.anonymous.desc":
-		"Conectat la Steam fără token de server de joc. Normal la jocurile din era GoldSrc, o scurtătură pentru ferme în rest.",
+	"rule.anonymous.desc": "Fără token de server. Normal la GoldSrc, o scurtătură în rest.",
 	"rule.anonymous.detail": "fără token de server de joc",
 	"rule.dense-ip": "Teanc pe IP",
-	"rule.dense-ip.desc": "Zece sau mai multe intrări de pe o singură adresă IP.",
+	"rule.dense-ip.desc": "Zece sau mai multe intrări pe un singur IP.",
 	"rule.dense-ip.detail": "{n} intrări pe acest IP",
 	"rule.dense-subnet": "Teanc în subrețea",
-	"rule.dense-subnet.desc": "Cincizeci sau mai multe intrări din același /24. Un operator, multe adrese.",
+	"rule.dense-subnet.desc": "Cincizeci sau mai multe intrări într-un /24.",
 	"rule.dense-subnet.detail": "{n} intrări în acest /24",
 	"rules.decides": "decide",
 	"rules.listings": { one: "{n} intrare", few: "{n} intrări", other: "{n} de intrări" },
@@ -92,8 +90,7 @@ const ro: Dict = {
 	"chart.title": "Ultimele 12 luni",
 	"chart.all": "toate serverele",
 	"chart.fake": "false",
-	"chart.note":
-		"Un punct pe zi. Golurile sunt zile în care colectorul a stat; nu tragem linii prin ce n-am văzut.",
+	"chart.note": "Un punct pe zi. Golurile sunt zile în care colectorul a stat.",
 	"chart.servers": { one: "{n} server", few: "{n} servere", other: "{n} de servere" },
 	"chart.fakeN": "{n} false",
 
@@ -119,7 +116,7 @@ const ro: Dict = {
 	"games.partial.title": "API-ul a încetat să pagineze; totalul real e mai mare",
 
 	"top.title": "Cele mai mari ferme",
-	"top.lead": "Un operator, multe adrese. Grupate după nume, hartă și limită de jucători identice.",
+	"top.lead": "Un operator, multe adrese. Grupate după nume, hartă și limită de jucători.",
 	"top.all": "Toate fermele, cu filtre și adrese →",
 	"top.empty": "Niciun grup de trei sau mai multe intrări identice acum.",
 	"top.cluster": "Grup",
@@ -130,10 +127,10 @@ const ro: Dict = {
 
 	"how.title": "Cum numărăm",
 	"how.lead1":
-		"{n} reguli, toate numărători simple pe lista pe care o arată browserul însuși. Fără sondări, fără ghicit. Cifra mare folosește doar cea mai strictă, „Armata de clone”: o încălcare de netăgăduit, cu care nimeni nu se poate certa. Celelalte patru sunt context și apar ca ponderi din listă. Serverele proprii ale Valve, {official} chiar acum, sunt și ele în serverul master; nu sunt nici numărate, nici învinuite. De aceea cifra e un prag minim.",
+		"{n} reguli, simple numărători pe lista publică. Cifra mare folosește doar cea mai strictă, Armata de clone. Celelalte patru sunt context. Cele {official} servere ale Valve sunt excluse.",
 	"how.lead2a": "Alții au mers mai departe.",
 	"how.lead2b":
-		"urmărește și listele de jucători și tiparele de activitate în timp, prinde mult mai multe și ascunde totul în propriul browser. Noi rămânem la ce se poate verifica dintr-o singură listă publică. Lipsește o regulă sau un prag e greșit? Deschide un issue.",
+		"urmărește și listele de jucători și tiparele de activitate în timp și prinde mult mai mult. Noi rămânem la o singură listă publică. Lipsește o regulă? Deschide un issue.",
 
 	"footer.updated": "Actualizat {date} · următoarea rulare în {t}",
 	"footer.methodology": "Metodologie",
@@ -142,13 +139,12 @@ const ro: Dict = {
 	"footer.csbro1": "Vrei un browser de servere care ascunde toate astea? Încearcă",
 	"footer.csbro2": ", un browser de comunitate cu falsurile filtrate. Același autor, aceeași supărare.",
 	"footer.disclaimer":
-		"Datele sunt colectate automat de un script care n-a jucat niciodată Counter-Strike. Greșelile se întâmplă. Dacă serverul tău e de partea greșită a acestei pagini, folosește butonul de raportare din verificatorul de mai sus. Fără legătură cu Valve.",
+		"Adunate de un script care n-a jucat niciodată Counter-Strike. Greșește. Verdict greșit? Butonul de raportare de mai sus. Fără legătură cu Valve.",
 	"footer.gabe": "Gabe, dacă citești asta: fără presiune.",
 	"top.button": "↑ sus",
 
 	"farms.title": "Ferme",
-	"farms.lead":
-		"Fiecare grup de trei sau mai multe intrări identice din ultima rulare: același nume, hartă și limită de jucători, multe adrese. Deschide unul ca să vezi cine e în spate.",
+	"farms.lead": "Fiecare grup de trei sau mai multe intrări identice. Deschide unul ca să vezi adresele.",
 	"farms.search": "caută după nume, IP sau subrețea",
 	"farms.allGames": "toate jocurile",
 	"farms.allMaps": "toate hărțile",
@@ -185,10 +181,10 @@ const ro: Dict = {
 
 	"fix.title": "Reparați redirecționarea, nu lista",
 	"fix.p1":
-		"Fiecare fermă de aici are aceeași afacere. O intrare falsă nu costă nimic: răspunzi la interogare, arăți un server plin pe o hartă populară, aștepți. Când un jucător o alege și se conectează, serverul redirecționează clientul către altă adresă, cea pe care operatorul chiar vrea s-o umple. Intrarea e panoul publicitar; redirecționarea e ușa.",
+		"O intrare falsă nu costă nimic. Răspunzi la interogare, arăți un server plin pe o hartă bună, aștepți. Când cineva se conectează, e trimis la adresa pe care operatorul chiar vrea s-o umple.",
 	"fix.p2":
-		"Ușa asta e toată economia. Luați-i serverului posibilitatea de a trimite în altă parte un client care se conectează, și o oglindă devine o fundătură: jucătorul nu ajunge nicăieri, operatorul nu câștigă nimic, iar mii de intrări nu mai merită tokenurile și IP-urile pe care le costă. Nimeni nu trebuie să păzească lista. Se golește singură.",
-	"fix.tagline": "Închideți redirecționarea și piața oglinzilor se prăbușește.",
+		"Toată afacerea stă în redirecționarea asta. Fără ea o oglindă nu duce nicăieri și nu-și mai scoate tokenurile și IP-urile. Valve nu trebuie să modereze 100.000 de servere. Trebuie să scoată o funcție.",
+	"fix.tagline": "Scoate redirecționarea și fermele cad cu ea.",
 
 	"time.never": "niciodată",
 	"time.justNow": "chiar acum",

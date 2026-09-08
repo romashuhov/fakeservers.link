@@ -20,11 +20,16 @@ const cs: Dict = {
 	"headline.line": "serverů v seznamu jsou falešné nebo zrcadla",
 	"headline.fraction": "{fake} falešných / {total} celkem",
 	"headline.floor":
-		"Spodní hranice, ne odhad. Počítají se jen záznamy, které jsou prokazatelně kopiemi jeden druhého; vše, co vyžaduje úsudek, zůstává stranou, a {n} vlastních serverů Valve je mimo obě strany. Skutečný podíl je vyšší.",
+		"Tohle je minimum. Počítáme jen prokazatelné kopie a {n} vlastních serverů Valve je mimo obě strany. Skutečný podíl je vyšší.",
 	"headline.live": "Živě · {ago}",
-	"stat.farm100": "sedí ve farmách se 100+ identickými kopiemi",
-	"stat.largest": "kopií v největší farmě",
-	"stat.days": "dní počítání, konec v nedohlednu",
+	"stat.farm100": "ve farmách se 100+ identickými kopiemi",
+	"stat.largest": {
+		one: "kopie v největší farmě",
+		few: "kopie v největší farmě",
+		many: "kopie v největší farmě",
+		other: "kopií v největší farmě",
+	},
+	"stat.days": { one: "den počítání", few: "dny počítání", many: "dne počítání", other: "dní počítání" },
 
 	"check.title": "Zkontrolovat server",
 	"check.lead": "Vlož adresu z prohlížeče. Řekneme ti, na které straně seznamu je.",
@@ -37,22 +42,17 @@ const cs: Dict = {
 	"check.hits": "Spuštěno {hits} z {total} pravidel; rozhoduje jen první.",
 	"check.seeFarm": "Zobrazit tuto farmu a jejích {n} adres →",
 	"verdict.duplicate": "Falešný",
-	"verdict.duplicate.note":
-		"Spustila se „Armáda klonů“: tato adresa je jednou z mnoha se stejným názvem, mapou a limitem hráčů.",
+	"verdict.duplicate.note": "Tahle adresa sdílí název, mapu i limit hráčů s mnoha dalšími.",
 	"verdict.unique": "Vypadá pravě",
-	"verdict.unique.note":
-		"„Armáda klonů“ se nespustila. Ostatní pravidla jsou jen kontext. Možná se tu opravdu hraje.",
+	"verdict.unique.note": "Armáda klonů se nespustila. Ostatní pravidla jsou jen kontext.",
 	"verdict.gone": "Zmizel",
-	"verdict.gone.note": "Chybí v posledním snímku. Farmy taky utichají; záznam si necháváme.",
+	"verdict.gone.note": "Není v posledním snímku. Farmy taky utichají, záznam si necháváme.",
 	"verdict.not_listed": "Není v seznamu",
-	"verdict.not_listed.note":
-		"Tuto adresu jsme v seznamu Steamu nikdy neviděli. Buď je úplně nová, nebo nikdy neexistovala. Stává se obojí.",
+	"verdict.not_listed.note": "V seznamu Steamu jsme ji neviděli. Buď je nová, nebo nikdy nebyla.",
 	"verdict.listed_recently": "Příliš nový",
-	"verdict.listed_recently.note":
-		"Steam ho právě teď uvádí, ale objevil se po našem posledním snímku. Zkus to za hodinu.",
+	"verdict.listed_recently.note": "Steam ji teď uvádí, ale objevila se po našem snímku. Zkus to za hodinu.",
 	"verdict.official": "Oficiální Valve",
-	"verdict.official.note":
-		"Jeden z vlastních serverů Valve. Je na master serveru, ale není komunitní: držíme ho mimo všechna počítání.",
+	"verdict.official.note": "Server samotného Valve. Není komunitní, takže se nikde nepočítá.",
 	"field.name": "Název",
 	"field.map": "Mapa",
 	"field.players": "Hráči",
@@ -69,21 +69,19 @@ const cs: Dict = {
 	"report.failed": "Nepodařilo se odeslat. Zkus to později.",
 
 	"rule.identical": "Armáda klonů",
-	"rule.identical.desc":
-		"Stejný název, stejná mapa, stejný limit hráčů na třech a více adresách. Jeden config, mnoho portů.",
+	"rule.identical.desc": "Stejný název, mapa a limit hráčů na třech a více adresách.",
 	"rule.identical.detail": "{n} adres sdílí tento název, mapu a limit",
 	"rule.farm": "Velikost farmy",
-	"rule.farm.desc": "Součást shluku 100 a více identických záznamů. Velmi efektivní hardware.",
+	"rule.farm.desc": "Součást shluku 100 a více identických záznamů.",
 	"rule.farm.detail": "shluk {n} identických záznamů",
 	"rule.anonymous": "Bez tokenu",
-	"rule.anonymous.desc":
-		"Přihlášen do Steamu bez tokenu herního serveru. Normální u her z éry GoldSrc, jinde zkratka pro farmy.",
+	"rule.anonymous.desc": "Bez tokenu serveru. U GoldSrc normální, jinde zkratka.",
 	"rule.anonymous.detail": "bez tokenu herního serveru",
 	"rule.dense-ip": "Hromada na IP",
-	"rule.dense-ip.desc": "Deset a více záznamů z jedné IP adresy.",
+	"rule.dense-ip.desc": "Deset a více záznamů na jedné IP.",
 	"rule.dense-ip.detail": "{n} záznamů na této IP",
 	"rule.dense-subnet": "Hromada v podsíti",
-	"rule.dense-subnet.desc": "Padesát a více záznamů ze stejné /24. Jeden provozovatel, mnoho adres.",
+	"rule.dense-subnet.desc": "Padesát a více záznamů v jedné /24.",
 	"rule.dense-subnet.detail": "{n} záznamů v této /24",
 	"rules.decides": "rozhoduje",
 	"rules.listings": { one: "{n} záznam", few: "{n} záznamy", many: "{n} záznamu", other: "{n} záznamů" },
@@ -92,8 +90,7 @@ const cs: Dict = {
 	"chart.title": "Posledních 12 měsíců",
 	"chart.all": "všechny servery",
 	"chart.fake": "falešné",
-	"chart.note":
-		"Jedna tečka za den. Mezery jsou dny, kdy sběrač stál; přes to, co jsme neviděli, čáry nekreslíme.",
+	"chart.note": "Jedna tečka za den. Mezery jsou dny, kdy sběrač stál.",
 	"chart.servers": { one: "{n} server", few: "{n} servery", many: "{n} serveru", other: "{n} serverů" },
 	"chart.fakeN": "{n} falešných",
 
@@ -119,7 +116,7 @@ const cs: Dict = {
 	"games.partial.title": "API přestalo stránkovat; skutečné číslo je vyšší",
 
 	"top.title": "Největší farmy",
-	"top.lead": "Jeden provozovatel, mnoho adres. Seskupeno podle stejného názvu, mapy a limitu hráčů.",
+	"top.lead": "Jeden provozovatel, mnoho adres. Seskupeno podle názvu, mapy a limitu hráčů.",
 	"top.all": "Všechny farmy, s filtry a adresami →",
 	"top.empty": "Právě teď žádné shluky tří a více identických záznamů.",
 	"top.cluster": "Shluk",
@@ -130,10 +127,10 @@ const cs: Dict = {
 
 	"how.title": "Jak počítáme",
 	"how.lead1":
-		"{n} pravidel, všechno prosté počty nad seznamem, který ukazuje sám prohlížeč. Žádné sondování, žádné hádání. Velké číslo používá jen to nejpřísnější, „Armádu klonů“: nesporné porušení, o kterém se nedá hádat. Ostatní čtyři jsou kontext a zobrazují se jako podíly seznamu. Vlastní servery Valve, právě teď {official}, jsou na master serveru také; nepočítáme je ani neobviňujeme. Proto je číslo spodní hranicí.",
+		"{n} pravidel, prosté počty nad veřejným seznamem. Velké číslo používá jen to nejpřísnější, Armádu klonů. Zbylá čtyři jsou kontext. {official} serverů Valve je mimo.",
 	"how.lead2a": "Jiní šli dál.",
 	"how.lead2b":
-		"sleduje také seznamy hráčů a vzorce online v čase, chytí mnohem víc a všechno to ve svém prohlížeči skryje. My se držíme toho, co lze ověřit z jednoho veřejného seznamu. Chybí pravidlo nebo je špatný práh? Otevři issue.",
+		"navíc sleduje seznamy hráčů a vzorce online v čase a chytí mnohem víc. My zůstáváme u jednoho veřejného seznamu. Chybí pravidlo? Otevři issue.",
 
 	"footer.updated": "Aktualizováno {date} · další běh za {t}",
 	"footer.methodology": "Metodika",
@@ -142,13 +139,12 @@ const cs: Dict = {
 	"footer.csbro1": "Chceš prohlížeč serverů, který tohle všechno skryje? Zkus",
 	"footer.csbro2": ", komunitní prohlížeč s odfiltrovanými falešnými. Stejný autor, stejná křivda.",
 	"footer.disclaimer":
-		"Data sbírá automaticky skript, který nikdy nehrál Counter-Strike. Chyby se stávají. Je-li tvůj server na špatné straně této stránky, použij tlačítko nahlášení v kontrole výše. Bez vazby na Valve.",
+		"Sbírá to skript, který nikdy nehrál Counter-Strike. Dělá chyby. Špatný verdikt? Tlačítko nahlášení výše. Bez vazby na Valve.",
 	"footer.gabe": "Gabe, jestli tohle čteš: bez tlaku.",
 	"top.button": "↑ nahoru",
 
 	"farms.title": "Farmy",
-	"farms.lead":
-		"Každý shluk tří a více identických záznamů z posledního běhu: stejný název, mapa a limit hráčů, mnoho adres. Otevři ho a uvidíš, kdo za ním stojí.",
+	"farms.lead": "Každý shluk tří a více identických záznamů. Rozbal ho a uvidíš adresy.",
 	"farms.search": "hledat podle názvu, IP nebo podsítě",
 	"farms.allGames": "všechny hry",
 	"farms.allMaps": "všechny mapy",
@@ -186,10 +182,10 @@ const cs: Dict = {
 
 	"fix.title": "Opravte přesměrování, ne seznam",
 	"fix.p1":
-		"Každá farma tady dělá stejný byznys. Falešný záznam nestojí nic: odpovídat na dotaz, ukazovat plný server na populární mapě, čekat. Když si ho hráč vybere a připojí se, server přesměruje klienta na jinou adresu, tu, kterou chce provozovatel doopravdy naplnit. Záznam je billboard; přesměrování jsou dveře.",
+		"Falešný záznam nestojí nic. Odpovědět na dotaz, ukázat plný server na dobré mapě, čekat. Když se někdo připojí, přesměruje se na adresu, kterou chce provozovatel doopravdy naplnit.",
 	"fix.p2":
-		"Ty dveře jsou celá ekonomika. Vezměte serveru možnost poslat připojujícího se klienta jinam a zrcadlo se stane slepou uličkou: hráč nikam nedorazí, provozovatel nic nezíská a tisíce záznamů přestanou stát za tokeny a IP adresy, které stojí. Nikdo nemusí hlídat seznam. Vyprázdní se sám.",
-	"fix.tagline": "Zavřete přesměrování a trh se zrcadly se zhroutí.",
+		"Celý byznys stojí na tom přesměrování. Bez něj zrcadlo nikam nevede a přestane se vyplácet. Valve nemusí moderovat 100 000 serverů. Musí odebrat jednu funkci.",
+	"fix.tagline": "Zrušte přesměrování a farmy padnou s ním.",
 
 	"time.never": "nikdy",
 	"time.justNow": "právě teď",

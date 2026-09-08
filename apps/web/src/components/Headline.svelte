@@ -23,11 +23,11 @@
 		</div>
 		<div class="card-sm">
 			<div class="stat num">{n(tot.largestCluster)}</div>
-			<div class="stat-label">{t("stat.largest")}</div>
+			<div class="stat-label">{t("stat.largest", { n: tot.largestCluster })}</div>
 		</div>
 		<div class="card-sm">
 			<div class="stat num">{n(stats.trackedDays)}</div>
-			<div class="stat-label">{t("stat.days")}</div>
+			<div class="stat-label">{t("stat.days", { n: stats.trackedDays })}</div>
 		</div>
 	</div>
 

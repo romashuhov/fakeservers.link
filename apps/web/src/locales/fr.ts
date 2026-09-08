@@ -21,11 +21,11 @@ const fr: Dict = {
 	"headline.line": "des serveurs de la liste sont des faux ou des miroirs",
 	"headline.fraction": "{fake} faux / {total} au total",
 	"headline.floor":
-		"Un plancher, pas une estimation. Seules les entrées dont on peut prouver qu'elles sont des copies comptent ; tout ce qui demande un jugement est exclu, et les {n} serveurs de Valve sont retirés des deux côtés. La part réelle est plus élevée.",
+		"C'est un minimum. On ne compte que les copies prouvées, et les {n} serveurs de Valve sont exclus des deux côtés. La part réelle est plus élevée.",
 	"headline.live": "En direct · {ago}",
-	"stat.farm100": "sont dans des fermes de 100+ copies identiques",
-	"stat.largest": "copies dans la plus grande ferme",
-	"stat.days": "jours à compter, sans fin en vue",
+	"stat.farm100": "dans des fermes de 100+ copies identiques",
+	"stat.largest": { one: "copie dans la plus grande ferme", other: "copies dans la plus grande ferme" },
+	"stat.days": { one: "jour de comptage", other: "jours de comptage" },
 
 	"check.title": "Vérifier un serveur",
 	"check.lead": "Collez une adresse du navigateur. On vous dira de quel côté de la liste elle est.",
@@ -39,21 +39,18 @@ const fr: Dict = {
 	"check.seeFarm": "Voir cette ferme et ses {n} adresses →",
 	"verdict.duplicate": "Faux",
 	"verdict.duplicate.note":
-		"« Armée de clones » déclenchée : cette adresse est l'une de nombreuses portant le même nom, la même carte et la même limite de joueurs.",
+		"Cette adresse partage son nom, sa carte et sa limite de joueurs avec beaucoup d'autres.",
 	"verdict.unique": "Semble réel",
-	"verdict.unique.note":
-		"« Armée de clones » non déclenchée. Les autres règles ne sont que du contexte. Des gens y jouent peut-être vraiment.",
+	"verdict.unique.note": "Armée de clones n'a pas déclenché. Les autres règles ne sont que du contexte.",
 	"verdict.gone": "Disparu",
-	"verdict.gone.note": "Absent du dernier instantané. Les fermes se taisent aussi ; on garde la trace.",
+	"verdict.gone.note": "Absent du dernier instantané. Les fermes se taisent aussi, on garde la trace.",
 	"verdict.not_listed": "Pas dans la liste",
-	"verdict.not_listed.note":
-		"On n'a jamais vu cette adresse dans la liste Steam. Soit elle est toute neuve, soit elle n'a jamais existé. Les deux arrivent.",
+	"verdict.not_listed.note": "Jamais vue dans la liste Steam. Soit toute neuve, soit elle n'a jamais existé.",
 	"verdict.listed_recently": "Trop récent",
 	"verdict.listed_recently.note":
-		"Steam le liste en ce moment, mais il est apparu après notre dernier instantané. Repassez dans une heure.",
+		"Steam le liste maintenant, mais il est apparu après notre dernier instantané. Repassez dans une heure.",
 	"verdict.official": "Officiel Valve",
-	"verdict.official.note":
-		"Un serveur de Valve. Listé par le serveur maître, mais pas un serveur communautaire : on le garde hors de tous les comptes.",
+	"verdict.official.note": "Un serveur de Valve. Pas un serveur communautaire, donc compté nulle part.",
 	"field.name": "Nom",
 	"field.map": "Carte",
 	"field.players": "Joueurs",
@@ -70,22 +67,19 @@ const fr: Dict = {
 	"report.failed": "Envoi impossible. Réessayez plus tard.",
 
 	"rule.identical": "Armée de clones",
-	"rule.identical.desc":
-		"Même nom, même carte, même limite de joueurs sur trois adresses ou plus. Une config, beaucoup de ports.",
+	"rule.identical.desc": "Même nom, même carte, même limite de joueurs sur trois adresses ou plus.",
 	"rule.identical.detail": "{n} adresses partagent ce nom, cette carte et cette limite",
 	"rule.farm": "Taille de ferme",
-	"rule.farm.desc": "Fait partie d'un groupe de 100 entrées identiques ou plus. Du matériel très efficace.",
+	"rule.farm.desc": "Fait partie d'un groupe de 100 entrées identiques ou plus.",
 	"rule.farm.detail": "groupe de {n} entrées identiques",
 	"rule.anonymous": "Sans jeton",
-	"rule.anonymous.desc":
-		"Connecté à Steam sans jeton de serveur de jeu. Normal pour les jeux de l'ère GoldSrc, un raccourci pour les fermes ailleurs.",
+	"rule.anonymous.desc": "Pas de jeton de serveur. Normal pour GoldSrc, un raccourci ailleurs.",
 	"rule.anonymous.detail": "pas de jeton de serveur de jeu",
 	"rule.dense-ip": "Pile d'IP",
-	"rule.dense-ip.desc": "Dix entrées ou plus depuis une seule adresse IP.",
+	"rule.dense-ip.desc": "Dix entrées ou plus sur une seule IP.",
 	"rule.dense-ip.detail": "{n} entrées sur cette IP",
 	"rule.dense-subnet": "Pile de sous-réseau",
-	"rule.dense-subnet.desc":
-		"Cinquante entrées ou plus depuis le même /24. Un opérateur, beaucoup d'adresses.",
+	"rule.dense-subnet.desc": "Cinquante entrées ou plus dans un même /24.",
 	"rule.dense-subnet.detail": "{n} entrées dans ce /24",
 	"rules.decides": "décide",
 	"rules.listings": { one: "{n} entrée", other: "{n} entrées" },
@@ -94,8 +88,7 @@ const fr: Dict = {
 	"chart.title": "12 derniers mois",
 	"chart.all": "tous les serveurs",
 	"chart.fake": "faux",
-	"chart.note":
-		"Un point par jour. Les trous sont les jours où le collecteur était arrêté ; on ne trace pas de lignes à travers ce qu'on n'a pas vu.",
+	"chart.note": "Un point par jour. Les trous sont les jours où le collecteur était arrêté.",
 	"chart.servers": { one: "{n} serveur", other: "{n} serveurs" },
 	"chart.fakeN": "{n} faux",
 
@@ -121,7 +114,7 @@ const fr: Dict = {
 	"games.partial.title": "L'API a cessé de paginer ; le vrai total est plus élevé",
 
 	"top.title": "Plus grandes fermes",
-	"top.lead": "Un opérateur, beaucoup d'adresses. Regroupées par nom, carte et limite de joueurs identiques.",
+	"top.lead": "Un opérateur, beaucoup d'adresses. Regroupées par nom, carte et limite de joueurs.",
 	"top.all": "Toutes les fermes, avec filtres et adresses →",
 	"top.empty": "Aucun groupe de trois entrées identiques ou plus pour le moment.",
 	"top.cluster": "Groupe",
@@ -132,10 +125,10 @@ const fr: Dict = {
 
 	"how.title": "Comment on compte",
 	"how.lead1":
-		"{n} règles, toutes de simples comptages sur la liste que le navigateur affiche lui-même. Pas de sondage, pas de devinette. Le grand chiffre n'utilise que la plus stricte, « Armée de clones » : une violation indiscutable que personne ne peut contester. Les quatre autres sont du contexte, affichées comme parts de la liste. Les serveurs de Valve, {official} en ce moment, sont aussi dans le serveur maître ; ils ne sont ni comptés ni accusés. C'est pourquoi le chiffre est un plancher.",
+		"{n} règles, de simples comptages sur la liste publique. Le grand chiffre n'utilise que la plus stricte, Armée de clones. Les quatre autres sont du contexte. Les {official} serveurs de Valve sont exclus.",
 	"how.lead2a": "D'autres sont allés plus loin.",
 	"how.lead2b":
-		"surveille aussi les listes de joueurs et les tendances de fréquentation dans le temps, en attrape bien plus et cache tout cela dans son propre navigateur. Nous nous en tenons à ce qui se vérifie sur une seule liste publique. Une règle manque ou un seuil est faux ? Ouvrez une issue.",
+		"suit aussi les listes de joueurs et les tendances dans le temps, et en attrape bien plus. Nous nous en tenons à une seule liste publique. Une règle manque ? Ouvrez une issue.",
 
 	"footer.updated": "Mis à jour le {date} · prochain passage dans {t}",
 	"footer.methodology": "Méthodologie",
@@ -144,13 +137,12 @@ const fr: Dict = {
 	"footer.csbro1": "Envie d'un navigateur de serveurs qui cache tout ça ? Essayez",
 	"footer.csbro2": ", un navigateur communautaire avec les faux filtrés. Même auteur, même rancune.",
 	"footer.disclaimer":
-		"Les données sont collectées automatiquement par un script qui n'a jamais joué à Counter-Strike. Des erreurs arrivent. Si votre serveur est du mauvais côté de cette page, utilisez le bouton de signalement dans le vérificateur ci-dessus. Sans lien avec Valve.",
+		"Collecté par un script qui n'a jamais joué à Counter-Strike. Il se trompe. Mauvais verdict ? Bouton de signalement ci-dessus. Sans lien avec Valve.",
 	"footer.gabe": "Gabe, si tu lis ça : sans pression.",
 	"top.button": "↑ haut",
 
 	"farms.title": "Fermes",
-	"farms.lead":
-		"Chaque groupe de trois entrées identiques ou plus du dernier passage : même nom, carte et limite de joueurs, beaucoup d'adresses. Ouvrez-en un pour voir qui est derrière.",
+	"farms.lead": "Chaque groupe de trois entrées identiques ou plus. Ouvrez-en un pour voir les adresses.",
 	"farms.search": "chercher par nom, IP ou sous-réseau",
 	"farms.allGames": "tous les jeux",
 	"farms.allMaps": "toutes les cartes",
@@ -183,10 +175,10 @@ const fr: Dict = {
 
 	"fix.title": "Réparez la redirection, pas la liste",
 	"fix.p1":
-		"Toutes les fermes ici font le même commerce. Une fausse entrée ne coûte rien : répondre à la requête, afficher un serveur plein sur une carte populaire, attendre. Quand un joueur la choisit et se connecte, le serveur redirige le client vers une autre adresse, celle que l'opérateur veut vraiment remplir. L'entrée est l'affiche ; la redirection est la porte.",
+		"Une fausse entrée ne coûte rien. Répondre à la requête, afficher un serveur plein sur une bonne carte, attendre. Quand un joueur se connecte, il est redirigé vers l'adresse que l'opérateur veut vraiment remplir.",
 	"fix.p2":
-		"Cette porte, c'est toute l'économie. Retirez à un serveur la possibilité d'envoyer ailleurs un client qui se connecte, et un miroir devient une impasse : le joueur n'arrive nulle part, l'opérateur ne gagne rien, et des milliers d'entrées ne valent plus les jetons et les IP qu'elles coûtent. Personne n'a besoin de surveiller la liste. Elle se vide toute seule.",
-	"fix.tagline": "Fermez la redirection, et le marché des miroirs s'effondre.",
+		"Tout le commerce tient à cette redirection. Sans elle, un miroir ne mène nulle part et ne rembourse plus ses jetons et ses IP. Valve n'a pas à modérer 100 000 serveurs. Il a une fonction à retirer.",
+	"fix.tagline": "Supprimez la redirection, les fermes tombent avec elle.",
 
 	"time.never": "jamais",
 	"time.justNow": "à l'instant",

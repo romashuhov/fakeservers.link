@@ -20,11 +20,11 @@ const es: Dict = {
 	"headline.line": "de los servidores de la lista son falsos o espejos",
 	"headline.fraction": "{fake} falsos / {total} en total",
 	"headline.floor":
-		"Un mínimo, no una estimación. Solo cuentan las entradas que son copias demostrables unas de otras; todo lo que requiere criterio queda fuera, y los {n} servidores propios de Valve están fuera de ambos lados. La cuota real es mayor.",
+		"Esto es el mínimo. Solo contamos copias demostrables, y los {n} servidores de Valve quedan fuera de ambos lados. La cuota real es mayor.",
 	"headline.live": "En vivo · {ago}",
-	"stat.farm100": "están en granjas de 100+ copias idénticas",
-	"stat.largest": "copias en la granja más grande",
-	"stat.days": "días contando, sin final a la vista",
+	"stat.farm100": "en granjas de 100+ copias idénticas",
+	"stat.largest": { one: "copia en la granja más grande", other: "copias en la granja más grande" },
+	"stat.days": { one: "día contando", other: "días contando" },
 
 	"check.title": "Comprobar un servidor",
 	"check.lead": "Pega una dirección del navegador. Te diremos en qué lado de la lista está.",
@@ -37,23 +37,18 @@ const es: Dict = {
 	"check.hits": "{hits} de {total} reglas activadas; solo la primera decide.",
 	"check.seeFarm": "Ver esta granja y sus {n} direcciones →",
 	"verdict.duplicate": "Falso",
-	"verdict.duplicate.note":
-		"«Ejército de clones» activado: esta dirección es una de muchas con el mismo nombre, mapa y límite de jugadores.",
+	"verdict.duplicate.note": "Esta dirección comparte nombre, mapa y límite de jugadores con muchas otras.",
 	"verdict.unique": "Parece real",
-	"verdict.unique.note":
-		"«Ejército de clones» no se activó. Las demás reglas son solo contexto. Puede que aquí se juegue de verdad.",
+	"verdict.unique.note": "Ejército de clones no se activó. Las demás reglas son solo contexto.",
 	"verdict.gone": "Desaparecido",
-	"verdict.gone.note":
-		"Falta en la última instantánea. Las granjas también se callan; guardamos el registro.",
+	"verdict.gone.note": "No está en la última instantánea. Las granjas también callan, guardamos el registro.",
 	"verdict.not_listed": "No está en la lista",
-	"verdict.not_listed.note":
-		"Nunca hemos visto esta dirección en la lista de Steam. O es nuevísima, o nunca existió. Pasan las dos cosas.",
+	"verdict.not_listed.note": "Nunca vista en la lista de Steam. O es nuevísima, o nunca existió.",
 	"verdict.listed_recently": "Demasiado nuevo",
 	"verdict.listed_recently.note":
-		"Steam lo lista ahora mismo, pero apareció después de nuestra última instantánea. Vuelve en una hora.",
+		"Steam la lista ahora, pero apareció tras nuestra última instantánea. Vuelve en una hora.",
 	"verdict.official": "Oficial de Valve",
-	"verdict.official.note":
-		"Uno de los servidores propios de Valve. Listado por el servidor maestro, pero no es de la comunidad: lo dejamos fuera de todos los recuentos.",
+	"verdict.official.note": "Un servidor de Valve. No es de la comunidad, así que no cuenta en ningún lado.",
 	"field.name": "Nombre",
 	"field.map": "Mapa",
 	"field.players": "Jugadores",
@@ -70,21 +65,19 @@ const es: Dict = {
 	"report.failed": "No se pudo enviar. Inténtalo más tarde.",
 
 	"rule.identical": "Ejército de clones",
-	"rule.identical.desc":
-		"Mismo nombre, mismo mapa, mismo límite de jugadores en tres o más direcciones. Una config, muchos puertos.",
+	"rule.identical.desc": "Mismo nombre, mapa y límite de jugadores en tres o más direcciones.",
 	"rule.identical.detail": "{n} direcciones comparten este nombre, mapa y límite",
 	"rule.farm": "Tamaño de granja",
-	"rule.farm.desc": "Parte de un grupo de 100 o más entradas idénticas. Hardware muy eficiente.",
+	"rule.farm.desc": "Parte de un grupo de 100 o más entradas idénticas.",
 	"rule.farm.detail": "grupo de {n} entradas idénticas",
 	"rule.anonymous": "Sin token",
-	"rule.anonymous.desc":
-		"Conectado a Steam sin token de servidor de juego. Normal en juegos de la era GoldSrc, un atajo para granjas en el resto.",
+	"rule.anonymous.desc": "Sin token de servidor. Normal en GoldSrc, un atajo en el resto.",
 	"rule.anonymous.detail": "sin token de servidor de juego",
 	"rule.dense-ip": "Pila de IP",
-	"rule.dense-ip.desc": "Diez o más entradas desde una sola dirección IP.",
+	"rule.dense-ip.desc": "Diez o más entradas en una sola IP.",
 	"rule.dense-ip.detail": "{n} entradas en esta IP",
 	"rule.dense-subnet": "Pila de subred",
-	"rule.dense-subnet.desc": "Cincuenta o más entradas desde la misma /24. Un operador, muchas direcciones.",
+	"rule.dense-subnet.desc": "Cincuenta o más entradas en una misma /24.",
 	"rule.dense-subnet.detail": "{n} entradas en esta /24",
 	"rules.decides": "decide",
 	"rules.listings": { one: "{n} entrada", other: "{n} entradas" },
@@ -93,8 +86,7 @@ const es: Dict = {
 	"chart.title": "Últimos 12 meses",
 	"chart.all": "todos los servidores",
 	"chart.fake": "falsos",
-	"chart.note":
-		"Un punto por día. Los huecos son días con el rastreador parado; no trazamos líneas por lo que no vimos.",
+	"chart.note": "Un punto por día. Los huecos son días con el rastreador parado.",
 	"chart.servers": { one: "{n} servidor", other: "{n} servidores" },
 	"chart.fakeN": "{n} falsos",
 
@@ -120,7 +112,7 @@ const es: Dict = {
 	"games.partial.title": "La API dejó de paginar; el total real es mayor",
 
 	"top.title": "Mayores granjas",
-	"top.lead": "Un operador, muchas direcciones. Agrupadas por nombre, mapa y límite de jugadores idénticos.",
+	"top.lead": "Un operador, muchas direcciones. Agrupadas por nombre, mapa y límite de jugadores.",
 	"top.all": "Todas las granjas, con filtros y direcciones →",
 	"top.empty": "Ahora mismo no hay grupos de tres o más entradas idénticas.",
 	"top.cluster": "Grupo",
@@ -131,10 +123,10 @@ const es: Dict = {
 
 	"how.title": "Cómo contamos",
 	"how.lead1":
-		"{n} reglas, todas recuentos simples sobre la lista que muestra el propio navegador. Sin sondeos, sin adivinar. La cifra grande usa solo la más estricta, «Ejército de clones»: una infracción indiscutible que nadie puede rebatir. Las otras cuatro son contexto y se muestran como cuotas de la lista. Los servidores propios de Valve, {official} ahora mismo, también están en el servidor maestro; ni se cuentan ni se culpan. Por eso la cifra es un mínimo.",
+		"{n} reglas, simples recuentos sobre la lista pública. La cifra grande usa solo la más estricta, Ejército de clones. Las otras cuatro son contexto. Los {official} servidores de Valve quedan fuera.",
 	"how.lead2a": "Otros fueron más lejos.",
 	"how.lead2b":
-		"también vigila listas de jugadores y patrones de actividad a lo largo del tiempo, atrapa mucho más y lo oculta todo en su propio navegador. Nosotros nos ceñimos a lo que puede verificarse con una sola lista pública. ¿Falta una regla o un umbral está mal? Abre un issue.",
+		"además vigila listas de jugadores y patrones de actividad en el tiempo, y atrapa mucho más. Nosotros nos quedamos con una lista pública. ¿Falta una regla? Abre un issue.",
 
 	"footer.updated": "Actualizado el {date} · próxima pasada en {t}",
 	"footer.methodology": "Metodología",
@@ -143,13 +135,12 @@ const es: Dict = {
 	"footer.csbro1": "¿Quieres un navegador de servidores que oculte todo esto? Prueba",
 	"footer.csbro2": ", un navegador comunitario con los falsos filtrados. Mismo autor, mismo rencor.",
 	"footer.disclaimer":
-		"Los datos los recoge automáticamente un script que nunca ha jugado a Counter-Strike. Hay errores. Si tu servidor está en el lado equivocado de esta página, usa el botón de reporte del comprobador de arriba. Sin relación con Valve.",
+		"Lo recoge un script que nunca ha jugado a Counter-Strike. Se equivoca. ¿Veredicto erróneo? Botón de reporte arriba. Sin relación con Valve.",
 	"footer.gabe": "Gabe, si lees esto: sin presión.",
 	"top.button": "↑ arriba",
 
 	"farms.title": "Granjas",
-	"farms.lead":
-		"Cada grupo de tres o más entradas idénticas de la última pasada: mismo nombre, mapa y límite de jugadores, muchas direcciones. Ábrelo para ver quién está detrás.",
+	"farms.lead": "Cada grupo de tres o más entradas idénticas. Ábrelo para ver las direcciones.",
 	"farms.search": "buscar por nombre, IP o subred",
 	"farms.allGames": "todos los juegos",
 	"farms.allMaps": "todos los mapas",
@@ -182,10 +173,10 @@ const es: Dict = {
 
 	"fix.title": "Arreglad la redirección, no la lista",
 	"fix.p1":
-		"Todas las granjas de aquí tienen el mismo negocio. Una entrada falsa no cuesta nada: responder a la consulta, mostrar un servidor lleno en un mapa popular, esperar. Cuando un jugador la elige y se conecta, el servidor redirige al cliente a otra dirección, la que el operador quiere llenar de verdad. La entrada es la valla publicitaria; la redirección es la puerta.",
+		"Una entrada falsa no cuesta nada. Responder a la consulta, mostrar un servidor lleno en un buen mapa, esperar. Cuando alguien conecta, lo redirigen a la dirección que el operador quiere llenar.",
 	"fix.p2":
-		"Esa puerta es toda la economía. Quitadle a un servidor la capacidad de mandar a otro sitio al cliente que entra, y un espejo se convierte en un callejón sin salida: el jugador no llega a ninguna parte, el operador no gana nada, y miles de entradas dejan de valer los tokens y las IP que cuestan. Nadie tiene que vigilar la lista. Se vacía sola.",
-	"fix.tagline": "Cerrad la redirección y el mercado de espejos se derrumba.",
+		"Todo el negocio está en esa redirección. Sin ella un espejo no lleva a ninguna parte y deja de pagar sus tokens e IP. Valve no tiene que moderar 100.000 servidores. Tiene que quitar una función.",
+	"fix.tagline": "Quita la redirección y las granjas caen con ella.",
 
 	"time.never": "nunca",
 	"time.justNow": "ahora mismo",

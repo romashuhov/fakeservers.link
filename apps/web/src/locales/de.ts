@@ -20,11 +20,11 @@ const de: Dict = {
 	"headline.line": "der Server in der Liste sind Fakes oder Spiegel",
 	"headline.fraction": "{fake} Fakes / {total} gesamt",
 	"headline.floor":
-		"Eine Untergrenze, keine Schätzung. Nur Einträge, die nachweislich Kopien voneinander sind, zählen; alles, was Ermessen braucht, bleibt draußen, und Valves eigene {n} Server sind auf beiden Seiten ausgenommen. Der echte Anteil ist höher.",
+		"Das ist das Minimum. Gezählt werden nur beweisbare Kopien, Valves eigene {n} Server sind auf beiden Seiten ausgenommen. Der echte Anteil ist höher.",
 	"headline.live": "Live · {ago}",
-	"stat.farm100": "sitzen in Farmen mit 100+ identischen Kopien",
-	"stat.largest": "Kopien in der größten Farm",
-	"stat.days": "Tage Zählen, kein Ende in Sicht",
+	"stat.farm100": "in Farmen mit 100+ identischen Kopien",
+	"stat.largest": { one: "Kopie in der größten Farm", other: "Kopien in der größten Farm" },
+	"stat.days": { one: "Tag Zählen", other: "Tage Zählen" },
 
 	"check.title": "Server prüfen",
 	"check.lead": "Adresse aus dem Browser einfügen. Wir sagen dir, auf welcher Seite der Liste er steht.",
@@ -37,22 +37,18 @@ const de: Dict = {
 	"check.hits": "{hits} von {total} Regeln greifen; nur die erste entscheidet.",
 	"check.seeFarm": "Diese Farm und ihre {n} Adressen ansehen →",
 	"verdict.duplicate": "Fake",
-	"verdict.duplicate.note":
-		"„Klonarmee“ hat gegriffen: diese Adresse ist eine von vielen mit gleichem Namen, gleicher Map und gleichem Spielerlimit.",
+	"verdict.duplicate.note": "Name, Map und Spielerlimit teilt diese Adresse mit vielen anderen.",
 	"verdict.unique": "Sieht echt aus",
-	"verdict.unique.note":
-		"„Klonarmee“ hat nicht gegriffen. Die anderen Regeln sind nur Kontext. Vielleicht wird hier wirklich gespielt.",
+	"verdict.unique.note": "Klonarmee hat nicht gegriffen. Die anderen Regeln sind nur Kontext.",
 	"verdict.gone": "Verschwunden",
-	"verdict.gone.note": "Fehlt im letzten Schnappschuss. Auch Farmen werden still; wir behalten den Eintrag.",
+	"verdict.gone.note": "Nicht im letzten Schnappschuss. Auch Farmen werden still, der Eintrag bleibt.",
 	"verdict.not_listed": "Nicht in der Liste",
-	"verdict.not_listed.note":
-		"Wir haben diese Adresse nie in der Steam-Liste gesehen. Entweder brandneu, oder es gab sie nie. Beides kommt vor.",
+	"verdict.not_listed.note": "Nie in der Steam-Liste gesehen. Entweder brandneu oder nie existiert.",
 	"verdict.listed_recently": "Zu neu",
 	"verdict.listed_recently.note":
-		"Steam listet ihn gerade, aber er kam nach unserem letzten Schnappschuss. Schau in einer Stunde wieder rein.",
+		"Steam listet ihn jetzt, aber er kam nach unserem letzten Schnappschuss. Schau in einer Stunde wieder.",
 	"verdict.official": "Offiziell Valve",
-	"verdict.official.note":
-		"Einer von Valves eigenen Servern. Im Masterserver gelistet, aber kein Community-Server: wir halten ihn aus jeder Zählung heraus.",
+	"verdict.official.note": "Ein Server von Valve. Kein Community-Server, zählt also nirgends.",
 	"field.name": "Name",
 	"field.map": "Map",
 	"field.players": "Spieler",
@@ -69,21 +65,19 @@ const de: Dict = {
 	"report.failed": "Senden fehlgeschlagen. Versuch es später noch mal.",
 
 	"rule.identical": "Klonarmee",
-	"rule.identical.desc":
-		"Gleicher Name, gleiche Map, gleiches Spielerlimit auf drei oder mehr Adressen. Eine Config, viele Ports.",
+	"rule.identical.desc": "Gleicher Name, gleiche Map, gleiches Spielerlimit auf drei oder mehr Adressen.",
 	"rule.identical.detail": "{n} Adressen teilen Name, Map und Spielerlimit",
 	"rule.farm": "Farmgröße",
-	"rule.farm.desc": "Teil eines Clusters aus 100 oder mehr identischen Einträgen. Sehr effiziente Hardware.",
+	"rule.farm.desc": "Teil eines Clusters aus 100 oder mehr identischen Einträgen.",
 	"rule.farm.detail": "Cluster aus {n} identischen Einträgen",
 	"rule.anonymous": "Kein Token",
-	"rule.anonymous.desc":
-		"Bei Steam ohne Gameserver-Login-Token angemeldet. Normal bei GoldSrc-Spielen, sonst eine Abkürzung für Farmen.",
+	"rule.anonymous.desc": "Kein Gameserver-Token. Bei GoldSrc normal, sonst eine Abkürzung.",
 	"rule.anonymous.detail": "kein Gameserver-Login-Token",
 	"rule.dense-ip": "IP-Stapel",
-	"rule.dense-ip.desc": "Zehn oder mehr Einträge von einer IP-Adresse.",
+	"rule.dense-ip.desc": "Zehn oder mehr Einträge auf einer IP.",
 	"rule.dense-ip.detail": "{n} Einträge auf dieser IP",
 	"rule.dense-subnet": "Subnetz-Stapel",
-	"rule.dense-subnet.desc": "Fünfzig oder mehr Einträge aus demselben /24. Ein Betreiber, viele Adressen.",
+	"rule.dense-subnet.desc": "Fünfzig oder mehr Einträge in einem /24.",
 	"rule.dense-subnet.detail": "{n} Einträge in diesem /24",
 	"rules.decides": "entscheidet",
 	"rules.listings": { one: "{n} Eintrag", other: "{n} Einträge" },
@@ -92,8 +86,7 @@ const de: Dict = {
 	"chart.title": "Letzte 12 Monate",
 	"chart.all": "alle Server",
 	"chart.fake": "Fakes",
-	"chart.note":
-		"Ein Punkt pro Tag. Lücken sind Tage, an denen der Crawler stand; durch Ungesehenes ziehen wir keine Linien.",
+	"chart.note": "Ein Punkt pro Tag. Lücken sind Tage, an denen der Crawler stand.",
 	"chart.servers": { one: "{n} Server", other: "{n} Server" },
 	"chart.fakeN": "{n} Fakes",
 
@@ -119,7 +112,7 @@ const de: Dict = {
 	"games.partial.title": "Die API hat aufgehört zu blättern; die echte Zahl ist höher",
 
 	"top.title": "Größte Farmen",
-	"top.lead": "Ein Betreiber, viele Adressen. Gruppiert nach identischem Namen, Map und Spielerlimit.",
+	"top.lead": "Ein Betreiber, viele Adressen. Gruppiert nach Name, Map und Spielerlimit.",
 	"top.all": "Alle Farmen, mit Filtern und Adressen →",
 	"top.empty": "Gerade keine Cluster aus drei oder mehr identischen Einträgen.",
 	"top.cluster": "Cluster",
@@ -130,10 +123,10 @@ const de: Dict = {
 
 	"how.title": "Wie wir zählen",
 	"how.lead1":
-		"{n} Regeln, alles schlichte Zählungen über die Liste, die der Browser selbst zeigt. Kein Anpingen, kein Raten. Die große Zahl nutzt nur die strengste, „Klonarmee“: ein unbestreitbarer Verstoß, über den niemand streiten kann. Die anderen vier sind Kontext und werden als Anteile der Liste gezeigt. Valves eigene Server, gerade {official}, stehen ebenfalls im Masterserver; sie werden weder gezählt noch beschuldigt. Deshalb ist die Zahl eine Untergrenze.",
+		"{n} Regeln, alles einfache Zählungen über die öffentliche Liste. Die große Zahl nutzt nur die strengste, Klonarmee. Die anderen vier sind Kontext. Valves eigene {official} Server sind ausgenommen.",
 	"how.lead2a": "Andere sind weiter gegangen.",
 	"how.lead2b":
-		"beobachtet auch Spielerlisten und Online-Muster über die Zeit, fängt viel mehr und blendet all das im eigenen Browser aus. Wir bleiben bei dem, was sich aus einer einzigen öffentlichen Liste belegen lässt. Fehlt eine Regel oder stimmt ein Schwellenwert nicht? Mach ein Issue auf.",
+		"verfolgt zusätzlich Spielerlisten und Online-Muster über die Zeit und fängt weit mehr. Wir bleiben bei einer öffentlichen Liste. Fehlt eine Regel? Mach ein Issue auf.",
 
 	"footer.updated": "Aktualisiert {date} · nächster Lauf in {t}",
 	"footer.methodology": "Methodik",
@@ -142,13 +135,12 @@ const de: Dict = {
 	"footer.csbro1": "Willst du einen Serverbrowser, der das alles ausblendet? Probier",
 	"footer.csbro2": ", einen Community-Browser mit herausgefilterten Fakes. Gleicher Autor, gleicher Groll.",
 	"footer.disclaimer":
-		"Die Daten sammelt automatisch ein Skript, das nie Counter-Strike gespielt hat. Fehler passieren. Steht dein Server auf der falschen Seite dieser Seite, nutze den Melden-Knopf im Prüfer oben. Nicht mit Valve verbunden.",
+		"Gesammelt von einem Skript, das nie Counter-Strike gespielt hat. Es irrt sich. Falsches Urteil? Melden-Knopf oben. Nicht mit Valve verbunden.",
 	"footer.gabe": "Gabe, falls du das liest: kein Druck.",
 	"top.button": "↑ oben",
 
 	"farms.title": "Farmen",
-	"farms.lead":
-		"Jeder Cluster aus drei oder mehr identischen Einträgen des letzten Laufs: gleicher Name, Map und Spielerlimit, viele Adressen. Aufklappen, um zu sehen, wer dahintersteckt.",
+	"farms.lead": "Jeder Cluster aus drei oder mehr identischen Einträgen. Aufklappen zeigt die Adressen.",
 	"farms.search": "Suche nach Name, IP oder Subnetz",
 	"farms.allGames": "alle Spiele",
 	"farms.allMaps": "alle Maps",
@@ -181,10 +173,10 @@ const de: Dict = {
 
 	"fix.title": "Repariert die Weiterleitung, nicht die Liste",
 	"fix.p1":
-		"Jede Farm hier betreibt dasselbe Geschäft. Ein Fake-Eintrag kostet nichts: die Abfrage beantworten, einen vollen Server auf einer beliebten Map zeigen, warten. Wählt ein Spieler ihn und verbindet sich, leitet der Server den Client auf eine andere Adresse um, die, die der Betreiber wirklich füllen will. Der Eintrag ist die Plakatwand; die Weiterleitung ist die Tür.",
+		"Ein Fake-Eintrag kostet nichts. Abfrage beantworten, vollen Server auf einer guten Map zeigen, warten. Verbindet sich jemand, wird er auf die Adresse umgeleitet, die der Betreiber wirklich füllen will.",
 	"fix.p2":
-		"Diese Tür ist die ganze Ökonomie. Nehmt einem Server die Möglichkeit, einen beitretenden Client woandershin zu schicken, und ein Spiegel wird zur Sackgasse: der Spieler landet nirgends, der Betreiber gewinnt nichts, und tausende Einträge sind die Token und IPs nicht mehr wert, die sie kosten. Niemand muss die Liste überwachen. Sie leert sich von selbst.",
-	"fix.tagline": "Schließt die Weiterleitung, und der Markt für Spiegel bricht zusammen.",
+		"Auf dieser Weiterleitung steht das ganze Geschäft. Ohne sie führt ein Spiegel nirgendwohin und trägt seine Token und IPs nicht mehr. Valve muss nicht 100.000 Server moderieren. Es muss eine Funktion entfernen.",
+	"fix.tagline": "Weiterleitung weg, Farmen weg.",
 
 	"time.never": "nie",
 	"time.justNow": "gerade eben",

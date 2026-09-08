@@ -20,11 +20,11 @@ const tr: Dict = {
 	"headline.line": "listedeki sunucuların sahte veya ayna",
 	"headline.fraction": "{fake} sahte / {total} toplam",
 	"headline.floor":
-		"Bir taban, tahmin değil. Yalnızca birbirinin kopyası olduğu kanıtlanabilen kayıtlar sayılır; yargı gerektiren her şey dışarıda bırakılır ve Valve'ın kendi {n} sunucusu iki taraftan da çıkarılır. Gerçek pay daha yüksek.",
+		"Bu asgari rakam. Yalnızca kanıtlanabilir kopyalar sayılır, Valve'ın kendi {n} sunucusu iki taraftan da çıkarılır. Gerçek oran daha yüksek.",
 	"headline.live": "Canlı · {ago}",
 	"stat.farm100": "100+ özdeş kopyalı çiftliklerde",
-	"stat.largest": "en büyük çiftlikteki kopya",
-	"stat.days": "gündür sayıyoruz, sonu görünmüyor",
+	"stat.largest": { other: "kopya, en büyük çiftlikte" },
+	"stat.days": { other: "gündür sayıyoruz" },
 
 	"check.title": "Sunucu kontrol et",
 	"check.lead": "Tarayıcıdan bir adres yapıştır. Listenin hangi tarafında olduğunu söyleyelim.",
@@ -37,22 +37,18 @@ const tr: Dict = {
 	"check.hits": "{total} kuraldan {hits} tanesi tetiklendi; yalnızca ilki karar verir.",
 	"check.seeFarm": "Bu çiftliği ve {n} adresini gör →",
 	"verdict.duplicate": "Sahte",
-	"verdict.duplicate.note":
-		"“Klon ordusu” tetiklendi: bu adres, aynı ad, harita ve oyuncu limitini taşıyan pek çok adresten biri.",
+	"verdict.duplicate.note": "Bu adres adını, haritasını ve oyuncu limitini pek çok adresle paylaşıyor.",
 	"verdict.unique": "Gerçek görünüyor",
-	"verdict.unique.note":
-		"“Klon ordusu” tetiklenmedi. Diğer kurallar yalnızca bağlam. Burada gerçekten oynanıyor olabilir.",
+	"verdict.unique.note": "Klon ordusu tetiklenmedi. Diğer kurallar yalnızca bağlam.",
 	"verdict.gone": "Kayıp",
-	"verdict.gone.note": "Son anlık görüntüde yok. Çiftlikler de susar; kaydı saklıyoruz.",
+	"verdict.gone.note": "Son anlık görüntüde yok. Çiftlikler de susar, kaydı tutuyoruz.",
 	"verdict.not_listed": "Listede yok",
-	"verdict.not_listed.note":
-		"Bu adresi Steam listesinde hiç görmedik. Ya yepyeni, ya da hiç var olmadı. İkisi de olur.",
+	"verdict.not_listed.note": "Steam listesinde hiç görmedik. Ya yepyeni ya da hiç olmadı.",
 	"verdict.listed_recently": "Çok yeni",
 	"verdict.listed_recently.note":
-		"Steam şu anda listeliyor, ama son anlık görüntümüzden sonra ortaya çıktı. Bir saat sonra tekrar bak.",
+		"Steam şimdi listeliyor ama son anlık görüntümüzden sonra çıktı. Bir saat sonra bak.",
 	"verdict.official": "Resmi Valve",
-	"verdict.official.note":
-		"Valve'ın kendi sunucularından biri. Ana sunucuda listeleniyor ama topluluk sunucusu değil: hiçbir sayıma dahil etmiyoruz.",
+	"verdict.official.note": "Valve'ın kendi sunucusu. Topluluk sunucusu değil, hiçbir yerde sayılmaz.",
 	"field.name": "Ad",
 	"field.map": "Harita",
 	"field.players": "Oyuncular",
@@ -69,21 +65,19 @@ const tr: Dict = {
 	"report.failed": "Gönderilemedi. Daha sonra tekrar dene.",
 
 	"rule.identical": "Klon ordusu",
-	"rule.identical.desc":
-		"Üç veya daha fazla adreste aynı ad, aynı harita, aynı oyuncu limiti. Tek config, çok port.",
+	"rule.identical.desc": "Üç veya daha fazla adreste aynı ad, harita ve oyuncu limiti.",
 	"rule.identical.detail": "{n} adres bu adı, haritayı ve limiti paylaşıyor",
 	"rule.farm": "Çiftlik boyu",
-	"rule.farm.desc": "100 veya daha fazla özdeş kayıttan oluşan bir kümenin parçası. Çok verimli donanım.",
+	"rule.farm.desc": "100 veya daha fazla özdeş kaydın kümesinde.",
 	"rule.farm.detail": "{n} özdeş kayıtlık küme",
 	"rule.anonymous": "Jetonsuz",
-	"rule.anonymous.desc":
-		"Steam'e oyun sunucusu giriş jetonu olmadan bağlı. GoldSrc dönemi oyunlarda normal, diğerlerinde çiftlikler için kestirme.",
+	"rule.anonymous.desc": "Sunucu jetonu yok. GoldSrc'de normal, diğerlerinde kestirme.",
 	"rule.anonymous.detail": "oyun sunucusu giriş jetonu yok",
 	"rule.dense-ip": "IP yığını",
-	"rule.dense-ip.desc": "Tek bir IP adresinden on veya daha fazla kayıt.",
+	"rule.dense-ip.desc": "Tek bir IP'de on veya daha fazla kayıt.",
 	"rule.dense-ip.detail": "bu IP'de {n} kayıt",
 	"rule.dense-subnet": "Alt ağ yığını",
-	"rule.dense-subnet.desc": "Aynı /24'ten elli veya daha fazla kayıt. Tek operatör, çok adres.",
+	"rule.dense-subnet.desc": "Aynı /24 içinde elli veya daha fazla kayıt.",
 	"rule.dense-subnet.detail": "bu /24'te {n} kayıt",
 	"rules.decides": "karar verir",
 	"rules.listings": { one: "{n} kayıt", other: "{n} kayıt" },
@@ -92,8 +86,7 @@ const tr: Dict = {
 	"chart.title": "Son 12 ay",
 	"chart.all": "tüm sunucular",
 	"chart.fake": "sahte",
-	"chart.note":
-		"Günde bir nokta. Boşluklar tarayıcının durduğu günler; görmediğimiz şeylerin üzerinden çizgi çekmiyoruz.",
+	"chart.note": "Günde bir nokta. Boşluklar tarayıcının durduğu günler.",
 	"chart.servers": { one: "{n} sunucu", other: "{n} sunucu" },
 	"chart.fakeN": "{n} sahte",
 
@@ -119,7 +112,7 @@ const tr: Dict = {
 	"games.partial.title": "API sayfalamayı bıraktı; gerçek toplam daha yüksek",
 
 	"top.title": "En büyük çiftlikler",
-	"top.lead": "Tek operatör, çok adres. Özdeş ad, harita ve oyuncu limitine göre gruplanmış.",
+	"top.lead": "Tek operatör, çok adres. Ad, harita ve oyuncu limitine göre gruplandı.",
 	"top.all": "Tüm çiftlikler, filtreler ve adreslerle →",
 	"top.empty": "Şu anda üç veya daha fazla özdeş kayıtlık küme yok.",
 	"top.cluster": "Küme",
@@ -130,10 +123,10 @@ const tr: Dict = {
 
 	"how.title": "Nasıl sayıyoruz",
 	"how.lead1":
-		"{n} kural, hepsi tarayıcının kendi gösterdiği liste üzerinde basit sayımlar. Yoklama yok, tahmin yok. Büyük rakam yalnızca en katı olanı, “Klon ordusu”nu kullanır: kimsenin tartışamayacağı su götürmez bir ihlal. Diğer dördü bağlamdır ve listenin payları olarak gösterilir. Valve'ın kendi sunucuları, şu anda {official} tanesi, ana sunucuda da listeleniyor; ne sayılır ne suçlanır. Bu yüzden rakam bir tabandır.",
+		"{n} kural, hepsi herkese açık liste üzerinde basit sayımlar. Büyük rakam yalnızca en katısını, Klon ordusunu kullanır. Diğer dördü bağlam. Valve'ın {official} sunucusu dışarıda.",
 	"how.lead2a": "Başkaları daha ileri gitti.",
 	"how.lead2b":
-		"oyuncu listelerini ve zaman içindeki çevrimiçi örüntüleri de izliyor, çok daha fazlasını yakalıyor ve hepsini kendi tarayıcısında gizliyor. Biz tek bir herkese açık listeden doğrulanabilene bağlı kalıyoruz. Eksik kural mı var, eşik mi yanlış? Bir issue aç.",
+		"ayrıca oyuncu listelerini ve zaman içindeki çevrimiçi örüntüleri izler, çok daha fazlasını yakalar. Biz tek bir herkese açık listeye bağlı kalıyoruz. Eksik kural mı var? Issue aç.",
 
 	"footer.updated": "Güncellendi {date} · sonraki çalışma {t} sonra",
 	"footer.methodology": "Yöntem",
@@ -142,13 +135,12 @@ const tr: Dict = {
 	"footer.csbro1": "Tüm bunları gizleyen bir sunucu tarayıcısı mı istiyorsun? Dene:",
 	"footer.csbro2": ", sahteleri süzülmüş bir topluluk tarayıcısı. Aynı yazar, aynı kırgınlık.",
 	"footer.disclaimer":
-		"Veriler, hiç Counter-Strike oynamamış bir betik tarafından otomatik toplanır. Hatalar olur. Sunucun bu sayfanın yanlış tarafındaysa, yukarıdaki kontrol aracındaki bildir düğmesini kullan. Valve ile bağlantımız yok.",
+		"Bunu hiç Counter-Strike oynamamış bir betik topluyor. Hata yapıyor. Karar yanlış mı? Yukarıdaki bildir düğmesi. Valve ile bağımız yok.",
 	"footer.gabe": "Gabe, bunu okuyorsan: baskı yok.",
 	"top.button": "↑ yukarı",
 
 	"farms.title": "Çiftlikler",
-	"farms.lead":
-		"Son çalışmadaki üç veya daha fazla özdeş kayıtlık her küme: aynı ad, harita ve oyuncu limiti, çok adres. Arkasında kimin olduğunu görmek için birini aç.",
+	"farms.lead": "Üç veya daha fazla özdeş kaydın her kümesi. Adresleri görmek için birini aç.",
 	"farms.search": "ada, IP'ye veya alt ağa göre ara",
 	"farms.allGames": "tüm oyunlar",
 	"farms.allMaps": "tüm haritalar",
@@ -182,10 +174,10 @@ const tr: Dict = {
 
 	"fix.title": "Listeyi değil, yönlendirmeyi düzeltin",
 	"fix.p1":
-		"Buradaki her çiftlik aynı işi yapıyor. Sahte bir kayıt hiçbir şeye mal olmuyor: sorguya cevap ver, popüler bir haritada dolu bir sunucu göster, bekle. Bir oyuncu onu seçip bağlandığında sunucu istemciyi başka bir adrese yönlendiriyor, operatörün gerçekten doldurmak istediği adrese. Kayıt reklam panosu; yönlendirme kapı.",
+		"Sahte kayıt hiçbir şeye mal olmaz. Sorguya cevap ver, iyi bir haritada dolu sunucu göster, bekle. Biri bağlandığında operatörün gerçekten doldurmak istediği adrese yönlendirilir.",
 	"fix.p2":
-		"O kapı ekonominin tamamı. Sunucunun bağlanan istemciyi başka yere gönderme yeteneğini kaldırın, ayna çıkmaz sokağa dönüşür: oyuncu hiçbir yere varmaz, operatör hiçbir şey kazanmaz ve binlerce kayıt harcanan jetonlara ve IP'lere değmez olur. Kimsenin listeyi denetlemesi gerekmez. Kendi kendine boşalır.",
-	"fix.tagline": "Yönlendirmeyi kapatın, ayna pazarı çöker.",
+		"Bütün iş bu yönlendirmede. Onsuz ayna hiçbir yere çıkmaz ve jetonlarının, IP'lerinin parasını çıkarmaz. Valve'ın 100.000 sunucuyu denetlemesi gerekmiyor. Bir özelliği kaldırması gerekiyor.",
+	"fix.tagline": "Yönlendirmeyi kaldır, çiftlikler onunla gider.",
 
 	"time.never": "hiç",
 	"time.justNow": "az önce",
